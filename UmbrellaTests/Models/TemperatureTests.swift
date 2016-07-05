@@ -26,7 +26,7 @@ class TemperatureSpec: QuickSpec {
                 expect(kel.value).to(equal(2))
             }
             
-            fit("should convert to celsius correctly") {
+            it("should convert to celsius correctly") {
                 let cel = temp.converted(to: .Celsius)
                 expect(cel.value).to(equal(-271.15))
             }
@@ -44,12 +44,12 @@ class TemperatureSpec: QuickSpec {
             
             it("should convert to kelvin correctly") {
                 let kel = temp.converted(to: .Kelvin)
-                expect(kel.value).to(equal(304.2611))
+                expect(kel.value).to(beCloseTo(304.2611))
             }
             
             it("should convert to celsius correctly") {
                 let celsius = temp.converted(to: .Celsius)
-                expect(celsius.value).to(equal(31.1111))
+                expect(celsius.value).to(beCloseTo(31.1111))
             }
             
             it("should convert to farenheit correctly") {
@@ -76,7 +76,7 @@ class TemperatureSpec: QuickSpec {
             
             it("should convert to farenheit correctly") {
                 let faren = temp.converted(to: .Farenheit)
-                expect(faren.value).to(equal(64.4))
+                expect(faren.value).to(beCloseTo(64.4))
             }
         }
     }
