@@ -7,13 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FAC4CCE1D2BE8390099511F /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CCD1D2BE8390099511F /* Weather.swift */; };
+		4FAC4CD11D2BF1030099511F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CD01D2BF1030099511F /* Result.swift */; };
+		4FAC4CD51D2BF2020099511F /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CD41D2BF2020099511F /* WeatherViewController.swift */; };
+		4FAC4CD81D2BF2EF0099511F /* WeatherServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CD71D2BF2EF0099511F /* WeatherServiceMock.swift */; };
+		4FAC4CDB1D2BF5C00099511F /* WeatherViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CDA1D2BF5C00099511F /* WeatherViewControllerTests.swift */; };
+		4FAC4CDE1D2BF6190099511F /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAC4CDC1D2BF6190099511F /* Nimble.framework */; };
+		4FAC4CDF1D2BF6190099511F /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FAC4CDD1D2BF6190099511F /* Quick.framework */; };
+		4FAC4CE21D2BFFF20099511F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CE11D2BFFF20099511F /* Request.swift */; };
+		4FAC4CE51D2C05800099511F /* RequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CE41D2C05800099511F /* RequestSpec.swift */; };
+		4FAC4CE71D2C0D310099511F /* ResultParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CE61D2C0D310099511F /* ResultParsing.swift */; };
+		4FAC4CE91D2C1C660099511F /* SendableRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CE81D2C1C660099511F /* SendableRequestSpec.swift */; };
+		4FAC4CEB1D2C68DC0099511F /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CEA1D2C68DC0099511F /* Temperature.swift */; };
+		4FAC4CED1D2C69400099511F /* TemperatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CEC1D2C69400099511F /* TemperatureTests.swift */; };
 		4FD74A581D2B3DFA007DEF38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD74A571D2B3DFA007DEF38 /* AppDelegate.swift */; };
-		4FD74A5A1D2B3DFA007DEF38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD74A591D2B3DFA007DEF38 /* ViewController.swift */; };
 		4FD74A5D1D2B3DFA007DEF38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FD74A5B1D2B3DFA007DEF38 /* Main.storyboard */; };
 		4FD74A5F1D2B3DFA007DEF38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FD74A5E1D2B3DFA007DEF38 /* Assets.xcassets */; };
 		4FD74A621D2B3DFA007DEF38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FD74A601D2B3DFA007DEF38 /* LaunchScreen.storyboard */; };
-		4FD74A6D1D2B3DFA007DEF38 /* UmbrellaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD74A6C1D2B3DFA007DEF38 /* UmbrellaTests.swift */; };
 		4FD74A781D2B3DFA007DEF38 /* UmbrellaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD74A771D2B3DFA007DEF38 /* UmbrellaUITests.swift */; };
+		4FD74A881D2B3EBA007DEF38 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD74A871D2B3EBA007DEF38 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,19 +46,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4FAC4CCD1D2BE8390099511F /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Weather.swift; path = Models/Weather.swift; sourceTree = "<group>"; };
+		4FAC4CD01D2BF1030099511F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Providers/Result.swift; sourceTree = "<group>"; };
+		4FAC4CD41D2BF2020099511F /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherViewController.swift; path = Controllers/WeatherViewController.swift; sourceTree = "<group>"; };
+		4FAC4CD71D2BF2EF0099511F /* WeatherServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherServiceMock.swift; path = Mocks/Services/WeatherServiceMock.swift; sourceTree = "<group>"; };
+		4FAC4CDA1D2BF5C00099511F /* WeatherViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherViewControllerTests.swift; path = Controllers/WeatherViewControllerTests.swift; sourceTree = "<group>"; };
+		4FAC4CDC1D2BF6190099511F /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		4FAC4CDD1D2BF6190099511F /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		4FAC4CE11D2BFFF20099511F /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Request/Request.swift; sourceTree = "<group>"; };
+		4FAC4CE41D2C05800099511F /* RequestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestSpec.swift; path = Request/RequestSpec.swift; sourceTree = "<group>"; };
+		4FAC4CE61D2C0D310099511F /* ResultParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultParsing.swift; path = Request/ResultParsing.swift; sourceTree = "<group>"; };
+		4FAC4CE81D2C1C660099511F /* SendableRequestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendableRequestSpec.swift; path = Request/SendableRequestSpec.swift; sourceTree = "<group>"; };
+		4FAC4CEA1D2C68DC0099511F /* Temperature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Temperature.swift; path = Models/Temperature.swift; sourceTree = "<group>"; };
+		4FAC4CEC1D2C69400099511F /* TemperatureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemperatureTests.swift; path = Models/TemperatureTests.swift; sourceTree = "<group>"; };
 		4FD74A541D2B3DFA007DEF38 /* Umbrella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umbrella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD74A571D2B3DFA007DEF38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4FD74A591D2B3DFA007DEF38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4FD74A5C1D2B3DFA007DEF38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4FD74A5E1D2B3DFA007DEF38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FD74A611D2B3DFA007DEF38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FD74A631D2B3DFA007DEF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FD74A681D2B3DFA007DEF38 /* UmbrellaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UmbrellaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FD74A6C1D2B3DFA007DEF38 /* UmbrellaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaTests.swift; sourceTree = "<group>"; };
 		4FD74A6E1D2B3DFA007DEF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FD74A731D2B3DFA007DEF38 /* UmbrellaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UmbrellaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD74A771D2B3DFA007DEF38 /* UmbrellaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaUITests.swift; sourceTree = "<group>"; };
 		4FD74A791D2B3DFA007DEF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FD74A871D2B3EBA007DEF38 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Providers/Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FAC4CDE1D2BF6190099511F /* Nimble.framework in Frameworks */,
+				4FAC4CDF1D2BF6190099511F /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,11 +100,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FAC4CC51D2B3FA40099511F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4FAC4CCD1D2BE8390099511F /* Weather.swift */,
+				4FAC4CEA1D2C68DC0099511F /* Temperature.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4FAC4CC61D2B409C0099511F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				4FAC4CD91D2BF2F20099511F /* Services */,
+			);
+			name = Mocks;
+			sourceTree = "<group>";
+		};
+		4FAC4CCC1D2BE7A60099511F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4FAC4CEC1D2C69400099511F /* TemperatureTests.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4FAC4CCF1D2BF0910099511F /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				4FAC4CE11D2BFFF20099511F /* Request.swift */,
+				4FAC4CE61D2C0D310099511F /* ResultParsing.swift */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		4FAC4CD31D2BF19E0099511F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4FAC4CD41D2BF2020099511F /* WeatherViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4FAC4CD61D2BF2CA0099511F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4FAC4CDA1D2BF5C00099511F /* WeatherViewControllerTests.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4FAC4CD91D2BF2F20099511F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4FAC4CD71D2BF2EF0099511F /* WeatherServiceMock.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		4FAC4CE01D2BF6AB0099511F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FAC4CDC1D2BF6190099511F /* Nimble.framework */,
+				4FAC4CDD1D2BF6190099511F /* Quick.framework */,
+			);
+			name = Frameworks;
+			path = UmbrellaTests;
+			sourceTree = "<group>";
+		};
+		4FAC4CE31D2C05680099511F /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				4FAC4CE41D2C05800099511F /* RequestSpec.swift */,
+				4FAC4CE81D2C1C660099511F /* SendableRequestSpec.swift */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
 		4FD74A4B1D2B3DFA007DEF38 = {
 			isa = PBXGroup;
 			children = (
 				4FD74A561D2B3DFA007DEF38 /* Umbrella */,
 				4FD74A6B1D2B3DFA007DEF38 /* UmbrellaTests */,
+				4FAC4CE01D2BF6AB0099511F /* Frameworks */,
 				4FD74A761D2B3DFA007DEF38 /* UmbrellaUITests */,
 				4FD74A551D2B3DFA007DEF38 /* Products */,
 			);
@@ -97,8 +201,11 @@
 		4FD74A561D2B3DFA007DEF38 /* Umbrella */ = {
 			isa = PBXGroup;
 			children = (
+				4FAC4CD31D2BF19E0099511F /* Controllers */,
+				4FAC4CCF1D2BF0910099511F /* Request */,
+				4FAC4CC51D2B3FA40099511F /* Models */,
+				4FD74A851D2B3E07007DEF38 /* Services */,
 				4FD74A571D2B3DFA007DEF38 /* AppDelegate.swift */,
-				4FD74A591D2B3DFA007DEF38 /* ViewController.swift */,
 				4FD74A5B1D2B3DFA007DEF38 /* Main.storyboard */,
 				4FD74A5E1D2B3DFA007DEF38 /* Assets.xcassets */,
 				4FD74A601D2B3DFA007DEF38 /* LaunchScreen.storyboard */,
@@ -110,7 +217,11 @@
 		4FD74A6B1D2B3DFA007DEF38 /* UmbrellaTests */ = {
 			isa = PBXGroup;
 			children = (
-				4FD74A6C1D2B3DFA007DEF38 /* UmbrellaTests.swift */,
+				4FAC4CD61D2BF2CA0099511F /* Controllers */,
+				4FAC4CC61D2B409C0099511F /* Mocks */,
+				4FAC4CCC1D2BE7A60099511F /* Models */,
+				4FAC4CE31D2C05680099511F /* Request */,
+				4FD74A861D2B3E0F007DEF38 /* Services */,
 				4FD74A6E1D2B3DFA007DEF38 /* Info.plist */,
 			);
 			path = UmbrellaTests;
@@ -123,6 +234,22 @@
 				4FD74A791D2B3DFA007DEF38 /* Info.plist */,
 			);
 			path = UmbrellaUITests;
+			sourceTree = "<group>";
+		};
+		4FD74A851D2B3E07007DEF38 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4FD74A871D2B3EBA007DEF38 /* Service.swift */,
+				4FAC4CD01D2BF1030099511F /* Result.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		4FD74A861D2B3E0F007DEF38 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +320,7 @@
 				TargetAttributes = {
 					4FD74A531D2B3DFA007DEF38 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8S4N3E7VRA;
 					};
 					4FD74A671D2B3DFA007DEF38 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -256,8 +384,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FD74A5A1D2B3DFA007DEF38 /* ViewController.swift in Sources */,
+				4FAC4CD11D2BF1030099511F /* Result.swift in Sources */,
+				4FAC4CE21D2BFFF20099511F /* Request.swift in Sources */,
+				4FAC4CEB1D2C68DC0099511F /* Temperature.swift in Sources */,
+				4FD74A881D2B3EBA007DEF38 /* Service.swift in Sources */,
 				4FD74A581D2B3DFA007DEF38 /* AppDelegate.swift in Sources */,
+				4FAC4CE71D2C0D310099511F /* ResultParsing.swift in Sources */,
+				4FAC4CD51D2BF2020099511F /* WeatherViewController.swift in Sources */,
+				4FAC4CCE1D2BE8390099511F /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +399,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FD74A6D1D2B3DFA007DEF38 /* UmbrellaTests.swift in Sources */,
+				4FAC4CED1D2C69400099511F /* TemperatureTests.swift in Sources */,
+				4FAC4CDB1D2BF5C00099511F /* WeatherViewControllerTests.swift in Sources */,
+				4FAC4CD81D2BF2EF0099511F /* WeatherServiceMock.swift in Sources */,
+				4FAC4CE91D2C1C660099511F /* SendableRequestSpec.swift in Sources */,
+				4FAC4CE51D2C05800099511F /* RequestSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +539,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Umbrella/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elliottminns.Umbrella;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -412,7 +552,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Umbrella/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elliottminns.Umbrella;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,10 +565,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = UmbrellaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(SRCROOT)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elliottminns.UmbrellaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Umbrella.app/Umbrella";
 			};
 			name = Debug;
@@ -435,8 +583,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = UmbrellaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(SRCROOT)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.elliottminns.UmbrellaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Umbrella.app/Umbrella";
@@ -484,6 +637,7 @@
 				4FD74A7E1D2B3DFA007DEF38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FD74A7F1D2B3DFA007DEF38 /* Build configuration list for PBXNativeTarget "UmbrellaTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +646,7 @@
 				4FD74A811D2B3DFA007DEF38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FD74A821D2B3DFA007DEF38 /* Build configuration list for PBXNativeTarget "UmbrellaUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +655,7 @@
 				4FD74A841D2B3DFA007DEF38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
