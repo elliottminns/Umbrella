@@ -53,7 +53,14 @@ struct Temperature {
         case .Celsius: return kelvin - celsiusToKelvinDelta
         case .Farenheit: return (kelvin * 1.8) - farenToKelDelta;
         }
-        
-        
     }
 }
+
+extension Temperature: Equatable {}
+
+func ==(lhs: Temperature, rhs: Temperature) -> Bool {
+    let lhsKelvin = lhs.converted(to: .Kelvin)
+    let rhsKelvin = rhs.converted(to: .Kelvin)
+    return lhsKelvin.value == rhsKelvin.value
+}
+

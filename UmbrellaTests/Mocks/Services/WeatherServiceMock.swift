@@ -17,9 +17,11 @@ class WeatherServiceMock {
     var result: Result<Weather>
     
     convenience init() {
-        let location = CLLocation(latitude: 0, longitude: 0)
-        let weather = Weather(location: location, start: NSDate(),
-                              end: NSDate(), condition: .Rain, description: "")
+        let temp = Temperature(value: 10, type: .Celsius)
+        let weather = Weather(start: NSDate(),
+                              end: NSDate(), condition: .Rain, description: "",
+                              temperature: temp)
+                              
         let res = Result.Success(weather)
         self.init(result: res)
     }

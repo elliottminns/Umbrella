@@ -20,6 +20,9 @@
 		4FAC4CE91D2C1C660099511F /* SendableRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CE81D2C1C660099511F /* SendableRequestSpec.swift */; };
 		4FAC4CEB1D2C68DC0099511F /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CEA1D2C68DC0099511F /* Temperature.swift */; };
 		4FAC4CED1D2C69400099511F /* TemperatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CEC1D2C69400099511F /* TemperatureTests.swift */; };
+		4FAC4CEF1D2C7C010099511F /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CEE1D2C7C010099511F /* WeatherRequest.swift */; };
+		4FAC4CF21D2C7D860099511F /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CF11D2C7D860099511F /* WeatherTests.swift */; };
+		4FAC4CF51D2C7EDD0099511F /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CF41D2C7EDD0099511F /* ResponseData.swift */; };
 		4FD74A581D2B3DFA007DEF38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD74A571D2B3DFA007DEF38 /* AppDelegate.swift */; };
 		4FD74A5D1D2B3DFA007DEF38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FD74A5B1D2B3DFA007DEF38 /* Main.storyboard */; };
 		4FD74A5F1D2B3DFA007DEF38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FD74A5E1D2B3DFA007DEF38 /* Assets.xcassets */; };
@@ -59,6 +62,9 @@
 		4FAC4CE81D2C1C660099511F /* SendableRequestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendableRequestSpec.swift; path = Request/SendableRequestSpec.swift; sourceTree = "<group>"; };
 		4FAC4CEA1D2C68DC0099511F /* Temperature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Temperature.swift; path = Models/Temperature.swift; sourceTree = "<group>"; };
 		4FAC4CEC1D2C69400099511F /* TemperatureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemperatureTests.swift; path = Models/TemperatureTests.swift; sourceTree = "<group>"; };
+		4FAC4CEE1D2C7C010099511F /* WeatherRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherRequest.swift; path = Request/WeatherRequest.swift; sourceTree = "<group>"; };
+		4FAC4CF11D2C7D860099511F /* WeatherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherTests.swift; path = Models/WeatherTests.swift; sourceTree = "<group>"; };
+		4FAC4CF41D2C7EDD0099511F /* ResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseData.swift; path = Data/ResponseData.swift; sourceTree = "<group>"; };
 		4FD74A541D2B3DFA007DEF38 /* Umbrella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umbrella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD74A571D2B3DFA007DEF38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FD74A5C1D2B3DFA007DEF38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				4FAC4CEC1D2C69400099511F /* TemperatureTests.swift */,
+				4FAC4CF11D2C7D860099511F /* WeatherTests.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -130,6 +137,7 @@
 			children = (
 				4FAC4CE11D2BFFF20099511F /* Request.swift */,
 				4FAC4CE61D2C0D310099511F /* ResultParsing.swift */,
+				4FAC4CEE1D2C7C010099511F /* WeatherRequest.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -177,6 +185,14 @@
 			name = Request;
 			sourceTree = "<group>";
 		};
+		4FAC4CF31D2C7DA10099511F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4FAC4CF41D2C7EDD0099511F /* ResponseData.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		4FD74A4B1D2B3DFA007DEF38 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +233,7 @@
 		4FD74A6B1D2B3DFA007DEF38 /* UmbrellaTests */ = {
 			isa = PBXGroup;
 			children = (
+				4FAC4CF31D2C7DA10099511F /* Data */,
 				4FAC4CD61D2BF2CA0099511F /* Controllers */,
 				4FAC4CC61D2B409C0099511F /* Mocks */,
 				4FAC4CCC1D2BE7A60099511F /* Models */,
@@ -390,6 +407,7 @@
 				4FD74A881D2B3EBA007DEF38 /* Service.swift in Sources */,
 				4FD74A581D2B3DFA007DEF38 /* AppDelegate.swift in Sources */,
 				4FAC4CE71D2C0D310099511F /* ResultParsing.swift in Sources */,
+				4FAC4CEF1D2C7C010099511F /* WeatherRequest.swift in Sources */,
 				4FAC4CD51D2BF2020099511F /* WeatherViewController.swift in Sources */,
 				4FAC4CCE1D2BE8390099511F /* Weather.swift in Sources */,
 			);
@@ -400,7 +418,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FAC4CED1D2C69400099511F /* TemperatureTests.swift in Sources */,
+				4FAC4CF51D2C7EDD0099511F /* ResponseData.swift in Sources */,
 				4FAC4CDB1D2BF5C00099511F /* WeatherViewControllerTests.swift in Sources */,
+				4FAC4CF21D2C7D860099511F /* WeatherTests.swift in Sources */,
 				4FAC4CD81D2BF2EF0099511F /* WeatherServiceMock.swift in Sources */,
 				4FAC4CE91D2C1C660099511F /* SendableRequestSpec.swift in Sources */,
 				4FAC4CE51D2C05800099511F /* RequestSpec.swift in Sources */,
