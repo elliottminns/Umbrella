@@ -35,6 +35,24 @@ class TemperatureSpec: QuickSpec {
                 let faren = temp.converted(to: .Farenheit)
                 expect(faren.value).to(equal(-456.07))
             }
+            
+            describe("comparing to its equivilents") {
+                
+                it("should equal with kelvin") {
+                    let kelvin = Temperature(value: 2, type: .Kelvin)
+                    expect(temp).to(equal(kelvin))
+                }
+                
+                it("should equal with farenheit") {
+                    let faren = Temperature(value: -456.07, type: .Farenheit)
+                    expect(temp).to(equal(faren))
+                }
+                
+                it("should equal with celsius") {
+                    let cel = Temperature(value: -271.15, type: .Celsius)
+                    expect(temp).to(equal(cel))
+                }
+            }
         }
         
         describe("setting a temperature of 88º farenheit") {
@@ -55,6 +73,24 @@ class TemperatureSpec: QuickSpec {
             it("should convert to farenheit correctly") {
                 let faren = temp.converted(to: .Farenheit)
                 expect(faren.value).to(equal(88))
+            }
+            
+            describe("comparing to its equivilents") {
+                
+                it("should equal with kelvin") {
+                    let kelvin = Temperature(value: 304.26, type: .Kelvin)
+                    expect(temp).to(equal(kelvin))
+                }
+                
+                it("should equal with farenheit") {
+                    let faren = Temperature(value: 88, type: .Farenheit)
+                    expect(temp).to(equal(faren))
+                }
+                
+                it("should equal with celsius") {
+                    let cel = Temperature(value: 31.11, type: .Celsius)
+                    expect(temp).to(equal(cel))
+                }
             }
         }
         
@@ -77,6 +113,24 @@ class TemperatureSpec: QuickSpec {
             it("should convert to farenheit correctly") {
                 let faren = temp.converted(to: .Farenheit)
                 expect(faren.value).to(beCloseTo(64.4))
+            }
+            
+            describe("comparing to its equivilents") {
+                
+                it("should equal with kelvin") {
+                    let kelvin = Temperature(value: 291.15, type: .Kelvin)
+                    expect(temp).to(equal(kelvin))
+                }
+                
+                it("should equal with farenheit") {
+                    let faren = Temperature(value: 64.4, type: .Farenheit)
+                    expect(temp).to(equal(faren))
+                }
+                
+                it("should equal with celsius") {
+                    let cel = Temperature(value: 18, type: .Celsius)
+                    expect(temp).to(equal(cel))
+                }
             }
         }
     }

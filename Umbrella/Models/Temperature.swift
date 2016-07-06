@@ -61,6 +61,6 @@ extension Temperature: Equatable {}
 func ==(lhs: Temperature, rhs: Temperature) -> Bool {
     let lhsKelvin = lhs.converted(to: .Kelvin)
     let rhsKelvin = rhs.converted(to: .Kelvin)
-    return lhsKelvin.value == rhsKelvin.value
+    return round(lhsKelvin.value) == round(rhsKelvin.value)
 }
 
