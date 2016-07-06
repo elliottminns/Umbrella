@@ -12,6 +12,11 @@ class WeatherViewController: UIViewController {
     
     var forecast: Forecast?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = Defaults.Color.Blue.base
+    }
+    
     func getForecast<T: Service where T.Data == Forecast>(fromService service: T) {
         service.get { [weak self] (result) in
             switch result {
