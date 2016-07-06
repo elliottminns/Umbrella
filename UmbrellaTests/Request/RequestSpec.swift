@@ -96,6 +96,41 @@ class RequestSpec: QuickSpec {
                 }
             }
         }
+        
+        describe("a GET mock request object") {
+            let mock: MockRequest = {
+                var mock = MockRequest()
+                mock.method = .GET
+                return mock
+            }()
+            
+            describe("building an NSURLRequest") {
+                var request: NSURLRequest?
+                
+                beforeEach {
+                    request = mock.buildRequest()
+                }
+                
+                it("should not be nil") {
+                    expect(request).toNot(beNil())
+                }
+                
+                it("should have the correct http method") {
+                    expect(request?.HTTPMethod).to(equal("GET"))
+                }
+                
+                describe("the url") {
+                    it("should have the correct query added") {
+                        let url = request?.URL?.absoluteString
+                        expect(url).to(equal("https://test.com/my-test?value=2"))
+                    }
+                }
+                
+                it("should have a nil HTTP Body") {
+                    expect(request?.HTTPBody).to(beNil())
+                }
+            }
+        }
     
         describe("a mock request object") {
             

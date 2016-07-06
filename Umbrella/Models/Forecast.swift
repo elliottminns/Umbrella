@@ -32,12 +32,10 @@ extension Forecast: JSONConstructable {
         location = CLLocation(latitude: latitude, longitude: longtiude)
         
         weather = weatherData.map { (data) -> Weather? in
-            return Weather(data: data)
-        }.flatMap {
-            return $0
-        }.sort {
-            return $0.0.start.timeIntervalSince1970 < $0.1.start.timeIntervalSince1970
-        }
+            Weather(data: data)
+        }.flatMap { $0 }.sort {
+            $0.0.start.timeIntervalSince1970 < $0.1.start.timeIntervalSince1970
+        } 
     }
     
 }

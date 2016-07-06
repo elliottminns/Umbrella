@@ -55,9 +55,27 @@ extension JSONBuildableRequest {
         let urlRequest = NSMutableURLRequest(URL: url) 
         urlRequest.allHTTPHeaderFields = headers
         urlRequest.HTTPMethod = method.rawValue
-        urlRequest.HTTPBody = data
+        
+        if method == .GET {
+            if let comps = createComponents(forUrl: url) {
+                urlRequest.URL = comps.URL
+            }
+        } else {
+            urlRequest.HTTPBody = data
+        }
         
         return urlRequest
+    }
+    
+    func createComponents(forUrl url: NSURL) -> NSURLComponents? {
+        let comps = NSURLComponents(URL: url, resolvingAgainstBaseURL: true)
+        let queryItems: [NSURLQueryItem] = parameters.map {
+            let set = NSCharacterSet.URLQueryAllowedCharacterSet()
+            let value = "\($0.1)".stringByAddingPercentEncodingWithAllowedCharacters(set)
+            return NSURLQueryItem(name: $0.0, value: value)
+        }
+        comps?.queryItems = queryItems
+        return comps
     }
 }
 
@@ -67,9 +85,7 @@ extension SendableRequest {
     
     func sendRequest(callback: (result: Result<ParsedType>) -> ()) {
         
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        
-        let session = NSURLSession(configuration: config)
+        let session = NSURLSession.sharedSession()
         
         sendRequest(withSession: session, callback: callback)
     }
