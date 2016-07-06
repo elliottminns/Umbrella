@@ -13,8 +13,9 @@ import Nimble
 class WeatherSpec: QuickSpec {
     
     override func spec() {
+        
         describe("creating with json") {
-            var response: String = ""
+            
             var json: [String: AnyObject] = [:]
             
             context("London forecast") {
@@ -22,10 +23,7 @@ class WeatherSpec: QuickSpec {
                 let data = ResponseData.Weather.Rain
                 
                 beforeEach {
-                    response = data.json
-                    let data = response.dataUsingEncoding(NSUTF8StringEncoding)!
-                    json = try! NSJSONSerialization.JSONObjectWithData(data,
-                        options: []) as! [String : AnyObject]
+                    json = data.jsonData
                 }
                 
                 describe("creating weather with list") {

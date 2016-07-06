@@ -10,31 +10,28 @@ import Foundation
 import CoreLocation
 @testable import Umbrella
 
-class WeatherServiceMock {
+class ForecastServiceMock {
     
     var getWeatherCalled: Bool
     
-    var result: Result<Weather>
+    var result: Result<Forecast>
     
     convenience init() {
-        let temp = Temperature(value: 10, type: .Celsius)
-        let weather = Weather(start: NSDate(),
-                              end: NSDate(), condition: .Rain, description: "",
-                              temperature: temp)
+        let forecast = Forecast(data: ResponseData.Forecast.London.jsonData)!
                               
-        let res = Result.Success(weather)
+        let res = Result.Success(forecast)
         self.init(result: res)
     }
     
-    init(result: Result<Weather>) {
+    init(result: Result<Forecast>) {
         self.result = result
         self.getWeatherCalled = false
     }
 }
 
-extension WeatherServiceMock: Service {
+extension ForecastServiceMock: Service {
     
-    func get(callback: (result: Result<Weather>) -> ()) {
+    func get(callback: (result: Result<Forecast>) -> ()) {
         getWeatherCalled = true
         callback(result: result)
     }

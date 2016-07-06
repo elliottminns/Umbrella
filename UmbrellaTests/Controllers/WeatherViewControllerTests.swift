@@ -23,18 +23,18 @@ class WeatherViewControllerSpec: QuickSpec {
         
         describe("getting weather") {
             
-            var mockService: WeatherServiceMock!
+            var mockService: ForecastServiceMock!
             
             context("using a default mock weather service") {
                 
                 beforeEach {
-                    mockService = WeatherServiceMock()
-                    controller.getWeather(fromService: mockService)
+                    mockService = ForecastServiceMock()
+                    controller.getForecast(fromService: mockService)
                 }
                 
                 describe("the controllers weather object") {
                     it("should exist") {
-                        expect(controller.weather).toNot(beNil())
+                        expect(controller.forecast).toNot(beNil())
                     }
                 }
                 
@@ -53,16 +53,16 @@ class WeatherViewControllerSpec: QuickSpec {
                 
                 let error = ServiceError(message: "Mock Error Message")
                 
-                let result = Result<Weather>.Failure(error)
+                let result = Result<Forecast>.Failure(error)
                 
                 beforeEach {
-                    mockService = WeatherServiceMock(result: result)
-                    controller.getWeather(fromService: mockService)
+                    mockService = ForecastServiceMock(result: result)
+                    controller.getForecast(fromService: mockService)
                 }
                 
                 describe("the controllers weather object") {
                     it("should not exist") {
-                        expect(controller.weather).to(beNil())
+                        expect(controller.forecast).to(beNil())
                     }
                 }
             }

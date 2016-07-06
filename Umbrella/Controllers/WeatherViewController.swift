@@ -10,13 +10,13 @@ import UIKit
 
 class WeatherViewController: UIViewController {
     
-    var weather: Weather?
+    var forecast: Forecast?
     
-    func getWeather<T: Service where T.Data == Weather>(fromService service: T) {
+    func getForecast<T: Service where T.Data == Forecast>(fromService service: T) {
         service.get { [weak self] (result) in
             switch result {
-            case .Success(let weather):
-                self?.weather = weather
+            case .Success(let forecast):
+                self?.forecast = forecast
             case .Failure(let error):
                 break;
             }

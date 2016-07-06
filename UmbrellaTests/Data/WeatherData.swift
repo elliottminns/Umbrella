@@ -9,7 +9,7 @@
 import Foundation
 @testable import Umbrella
 
-struct WeatherData {
+struct WeatherData: TestData {
     let temp: Double
     let tempMin: Double
     let tempMax: Double
