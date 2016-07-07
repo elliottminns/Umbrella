@@ -14,6 +14,10 @@ protocol TestData {
 
 extension TestData {
     
+    var data: NSData? {
+        return json.dataUsingEncoding(NSUTF8StringEncoding)
+    }
+    
     var jsonData: [String: AnyObject] {
         
         guard let data = json.dataUsingEncoding(NSUTF8StringEncoding) else {

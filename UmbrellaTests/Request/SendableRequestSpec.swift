@@ -15,33 +15,6 @@ class MockSendable: Request, JSONBuildableRequest, StringParsing, SendableReques
     var baseUrl: NSURL?
 }
 
-class MockURLSession: NSURLSession {
-    
-    var sessionCalled = false
-    
-    var request: NSURLRequest?
-    
-    var data: NSData?
-    
-    var response: NSURLResponse?
-    
-    var error: NSError?
-    
-    init(data: NSData?, response: NSURLResponse?, error: NSError?) {
-        self.data = data
-        self.response = response
-        self.error = error
-        super.init()
-    }
-    
-    override func dataTaskWithRequest(request: NSURLRequest, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
-        self.request = request
-        self.sessionCalled = true
-        completionHandler(data, response, error)
-        return NSURLSessionDataTask()
-    }
-}
-
 class SendableRequestSpec: QuickSpec {
 
     override func spec() {
@@ -49,7 +22,7 @@ class SendableRequestSpec: QuickSpec {
         describe("a mock sendable request") {
             
             var mock: MockSendable!
-            var session: MockURLSession!
+            var session: MockRequestClient!
             
             var data: NSData?
 
@@ -71,7 +44,7 @@ class SendableRequestSpec: QuickSpec {
                         beforeEach {
                             let value = NSData(base64EncodedString: "blobl", options: [])
                             data = value
-                            session = MockURLSession(data: data,
+                            session = MockRequestClient(data: data,
                                 response: nil, error: nil)
                         }
                         
@@ -80,7 +53,7 @@ class SendableRequestSpec: QuickSpec {
                             
                             beforeEach {
                                 waitUntil { done in
-                                    mock.sendRequest(withSession: session) { res in
+                                    mock.sendRequest(withClient: session) { res in
                                         result = res
                                         done()
                                     }
@@ -122,7 +95,7 @@ class SendableRequestSpec: QuickSpec {
                         beforeEach {
                             let value = "Hello World"
                             data = value.dataUsingEncoding(NSUTF8StringEncoding)
-                            session = MockURLSession(data: data,
+                            session = MockRequestClient(data: data,
                                 response: nil, error: error)
                         }
                         
@@ -132,7 +105,7 @@ class SendableRequestSpec: QuickSpec {
                             
                             beforeEach {
                                 waitUntil { done in
-                                    mock.sendRequest(withSession: session) { res in
+                                    mock.sendRequest(withClient: session) { res in
                                         result = res
                                         done()
                                     }
@@ -180,7 +153,7 @@ class SendableRequestSpec: QuickSpec {
                     beforeEach {
                         error = NSError(domain: "com.testerror", code: 1,
                             userInfo: nil)
-                        session = MockURLSession(data: nil, response: nil,
+                        session = MockRequestClient(data: nil, response: nil,
                             error: error)
                     }
                     
@@ -189,7 +162,7 @@ class SendableRequestSpec: QuickSpec {
                         var result: Result<String>?
                         beforeEach {
                             waitUntil { done in
-                                mock.sendRequest(withSession: session) { res in
+                                mock.sendRequest(withClient: session) { res in
                                     result = res
                                     done()
                                 }

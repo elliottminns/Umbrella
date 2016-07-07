@@ -85,13 +85,13 @@ extension SendableRequest {
     
     func sendRequest(callback: (result: Result<ParsedType>) -> ()) {
         
-        let session = NSURLSession.sharedSession()
+        let client = Requester.defaultClient
         
-        sendRequest(withSession: session, callback: callback)
+        sendRequest(withClient: client, callback: callback)
     }
     
-    func sendRequest(withSession session: NSURLSession,
-                                 callback: (result: Result<ParsedType>) -> ()) {
+    func sendRequest(withClient client: RequestClient,
+                                callback: (result: Result<ParsedType>) -> ()) {
         
         guard let request = buildRequest() else {
             let error = RequestError(message: "Could not build request")
@@ -99,7 +99,7 @@ extension SendableRequest {
             return callback(result: result)
         }
         
-        session.dataTaskWithRequest(request) { (data, response, error) in
+        client.perform(request: request) { (data, response, error) in
             
             var err: ErrorType?
             
