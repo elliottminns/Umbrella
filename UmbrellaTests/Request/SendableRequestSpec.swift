@@ -42,7 +42,7 @@ class SendableRequestSpec: QuickSpec {
                     
                     context("which is invalid") {
                         beforeEach {
-                            let value = NSData(base64EncodedString: "blobl", options: [])
+                            let value = NSData(base64EncodedString: "bslobl", options: [])
                             data = value
                             session = MockRequestClient(data: data,
                                 response: nil, error: nil)
@@ -52,15 +52,17 @@ class SendableRequestSpec: QuickSpec {
                             var result: Result<String>?
                             
                             beforeEach {
-                                waitUntil { done in
-                                    mock.sendRequest(withClient: session) { res in
-                                        result = res
-                                        done()
-                                    }
+                                mock.sendRequest(withClient: session) { res in
+                                    result = res
                                 }
                             }
                             
+                            afterEach {
+                                result = nil
+                            }
+                            
                             describe("the result") {
+                                
                                 it("should not be nil") {
                                     expect(result).toNot(beNil())
                                 }
