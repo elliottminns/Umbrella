@@ -34,7 +34,7 @@ class LocationService: NSObject {
     }
     
     func requestLocationAuthorization() {
-        self.locationManager.requestWhenInUseAuthorization()
+        locationManager.requestWhenInUseAuthorization()
     }
     
     func error(withType type: LocationServiceError) {
@@ -58,7 +58,8 @@ extension LocationService: CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager,
                          didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        behaviour(forStatus: status)
+        guard let callback = self.callback else { return }
+        self.get(callback)
     }
 }
 

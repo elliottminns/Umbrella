@@ -20,7 +20,8 @@ class SessionClient: RequestClient {
     
     func perform(request request: NSURLRequest, callback: ClientCallback) {
         let session = NSURLSession.sharedSession()
-        session.dataTaskWithRequest(request, completionHandler: callback)
+        let task = session.dataTaskWithRequest(request, completionHandler: callback)
+        task.resume()
     }
 }
 

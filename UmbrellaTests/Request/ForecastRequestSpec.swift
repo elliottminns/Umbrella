@@ -19,7 +19,7 @@ class ForecastRequestSpec: QuickSpec {
             let request = ForecastRequest(latitude: 51.3, longitude: -0.13)
             
             it("should have the correct baseUrl") {
-                let expected = NSURL(string: "api.openweathermap.org")
+                let expected = NSURL(string: "https://api.openweathermap.org")
                 expect(request.baseUrl).to(equal(expected))
             }
             

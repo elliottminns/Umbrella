@@ -9,11 +9,13 @@
 import Foundation
 import CoreLocation
 
-struct ForecastService {
+class ForecastService {
     
     typealias Callback = ((result: Result<Forecast>) -> ())
     
     typealias Data = Forecast
+    
+    var locationService: LocationService?
     
     func get<T: Service where T.Data == CLLocation>(withLocationService locationService: T,
              callback: Callback) {
@@ -42,5 +44,6 @@ extension ForecastService: Service {
     func get(callback: Callback) {
         let locationService = LocationService()
         get(withLocationService: locationService, callback: callback)
+        self.locationService = locationService
     }
 }
