@@ -21,6 +21,10 @@ class TemperatureSpec: QuickSpec {
                 temp = Temperature(value: 2, type: .Kelvin)
             }
             
+            it("should have the correct description") {
+                expect(temp.description).to(equal("2º K"))
+            }
+            
             it("should convert to kelvin correctly") {
                 let kel = temp.converted(to: .Kelvin)
                 expect(kel.value).to(equal(2))
@@ -58,6 +62,10 @@ class TemperatureSpec: QuickSpec {
         describe("setting a temperature of 88º farenheit") {
             beforeEach {
                 temp = Temperature(value: 88, type: .Farenheit)
+            }
+            
+            it("should have the correct description") {
+                expect(temp.description).to(equal("88º F"))
             }
             
             it("should convert to kelvin correctly") {
@@ -98,6 +106,10 @@ class TemperatureSpec: QuickSpec {
             
             beforeEach {
                 temp = Temperature(value: 18, type: .Celsius)
+            }
+            
+            it("should have the correct description") {
+                expect(temp.description).to(equal("18º C"))
             }
             
             it("should convert to kelvin correctly") {

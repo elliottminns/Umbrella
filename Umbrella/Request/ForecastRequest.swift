@@ -25,9 +25,10 @@ struct ForecastRequest: Request, JSONBuildableRequest, SendableRequest, JSONPars
     }
     
     init(latitude: Double, longitude: Double) {
-        baseUrl = NSURL(string: "https://api.openweathermap.org")
+        baseUrl = NSURL(string: "http://api.openweathermap.org")
         path = "/data/2.5/forecast"
         parameters["lat"] = latitude
         parameters["lon"] = longitude
+        parameters["cnt"] = 6
     }
 }

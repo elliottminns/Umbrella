@@ -16,22 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Umbrella" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQ7-IC-qJb">
-                                <rect key="frame" x="266" y="40" width="69" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mY-wN-aKm">
+                                <rect key="frame" x="272" y="64" width="57" height="28.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="-1" height="1"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baI-eB-Pr5">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FL-lo-wwb">
+                                <rect key="frame" x="279" y="100" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="EQ7-IC-qJb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YCw-da-TBk"/>
-                            <constraint firstItem="EQ7-IC-qJb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="z2n-3O-4ku"/>
+                            <constraint firstItem="8mY-wN-aKm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="3IJ-WH-Gzi"/>
+                            <constraint firstItem="7FL-lo-wwb" firstAttribute="top" secondItem="8mY-wN-aKm" secondAttribute="bottom" constant="7.5" id="KF8-JH-zG9"/>
+                            <constraint firstItem="7FL-lo-wwb" firstAttribute="centerX" secondItem="8mY-wN-aKm" secondAttribute="centerX" id="gIc-HD-b6c"/>
+                            <constraint firstItem="8mY-wN-aKm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ugC-IT-6fe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="locationLabel" destination="8mY-wN-aKm" id="UGu-1m-LB7"/>
+                        <outlet property="temperatureLabel" destination="7FL-lo-wwb" id="fu4-o8-2zC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

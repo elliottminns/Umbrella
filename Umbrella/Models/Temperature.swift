@@ -25,6 +25,19 @@ struct Temperature {
         self.type = type
     }
     
+    var description: String {
+        let valString = "\(Int(value))º"
+        let symbol: String
+        
+        switch type {
+        case .Celsius: symbol = "C"
+        case .Farenheit: symbol = "F"
+        case .Kelvin: symbol = "K"
+        }
+        
+        return valString + " " + symbol
+    }
+    
     func converted(to unit: UnitTemperature) -> Temperature {
         let convert = Temperature.convert(value, from: type, to: unit)
         return Temperature(value: convert, type: unit)

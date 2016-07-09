@@ -8,6 +8,7 @@
 
 import Quick
 import Nimble
+import CoreLocation
 @testable import Umbrella
 
 class ForecastSpec: QuickSpec {
@@ -33,6 +34,10 @@ class ForecastSpec: QuickSpec {
                 
                 it("should have the correct number of weathers") {
                     expect(forecast?.weather.count).to(equal(forecastData.weatherCount))
+                }
+                
+                it("should have the correcgt place name") { 
+                    expect(forecast?.placeName).to(equal("City of Westminster"))
                 }
                 
                 it("should have the correct location") {

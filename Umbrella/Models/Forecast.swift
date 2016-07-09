@@ -13,8 +13,13 @@ struct Forecast {
     
     let location: CLLocation
     
+    let placeName: String
+    
     let weather: [Weather]
     
+    func currentTemperature(inUnit unit: UnitTemperature) -> Temperature? {
+        return weather.first?.temperature.converted(to: unit)
+    }
 }
 
 extension Forecast: JSONConstructable {
@@ -22,12 +27,15 @@ extension Forecast: JSONConstructable {
     init?(data: [String : AnyObject]) {
         
         guard let city = data["city"] as? [String: AnyObject],
+            placeName = city["name"] as? String,
             coordinates = city["coord"] as? [String: Double],
             latitude = coordinates["lat"],
             longtiude = coordinates["lon"],
             weatherData = data["list"] as? [[String: AnyObject]] else {
                 return nil
         }
+        
+        self.placeName = placeName
         
         location = CLLocation(latitude: latitude, longitude: longtiude)
         

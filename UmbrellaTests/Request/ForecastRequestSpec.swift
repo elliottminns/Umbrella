@@ -19,7 +19,7 @@ class ForecastRequestSpec: QuickSpec {
             let request = ForecastRequest(latitude: 51.3, longitude: -0.13)
             
             it("should have the correct baseUrl") {
-                let expected = NSURL(string: "https://api.openweathermap.org")
+                let expected = NSURL(string: "http://api.openweathermap.org")
                 expect(request.baseUrl).to(equal(expected))
             }
             
@@ -42,6 +42,14 @@ class ForecastRequestSpec: QuickSpec {
                 
                 it("should have a lat") {
                     expect(request.parameters.keys).to(contain("lat"))
+                }
+                
+                it("should have a count") {
+                    expect(request.parameters.keys).to(contain("cnt"))
+                }
+                
+                it("should have a count of 6") {
+                    expect(request.parameters["cnt"] as? Int).to(equal(6))
                 }
                 
                 it("should have the correct latitude") {

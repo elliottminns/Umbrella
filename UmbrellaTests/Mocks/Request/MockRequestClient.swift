@@ -35,6 +35,6 @@ class MockRequestClient: RequestClient {
     func perform(request request: NSURLRequest, callback: ClientCallback) {
         self.request = request
         self.sessionCalled = true
-        return callback(data: data, response: response, error: error)
+        callback(data: data, response: response, error: error)
     }
 }

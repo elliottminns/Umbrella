@@ -10,18 +10,28 @@ import UIKit
 
 class WeatherViewController: UIViewController {
     
-    var forecast: Forecast?
-    var service: ForecastService?
+    let service: ForecastService = ForecastService()
+    
+    var forecast: Forecast? {
+        didSet {
+            self.locationLabel?.text = forecast?.placeName
+            self.temperatureLabel?.text = forecast?.currentTemperature(inUnit: .Celsius)?.description
+        }
+    }
+    
+    @IBOutlet var locationLabel: UILabel?
+    
+    @IBOutlet var temperatureLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = Defaults.Color.Blue.base
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        let service = ForecastService()
-        self.service = service
+        
         getForecast(fromService: service)
     }
     
@@ -31,10 +41,27 @@ class WeatherViewController: UIViewController {
             case .Success(let forecast):
                 self?.forecast = forecast
             case .Failure(let error):
-                print("error")
-                break;
+                self?.handle(error: error)
             }
         }
+    }
+
+    func handle(error error: ErrorType) {
+        if let error = error as? LocationServiceError {
+            handle(error: error)
+        } else if let error = error as? RequestError {
+            handle(error: error)
+        } else {
+            
+        }
+    }
+    
+    func handle(error error: RequestError) {
+        
+    }
+    
+    func handle(error error: LocationServiceError) {
+        
     }
     
 }

@@ -15,6 +15,14 @@ class MockSendable: Request, JSONBuildableRequest, StringParsing, SendableReques
     var baseUrl: NSURL?
 }
 
+class MockFailable: Request, JSONBuildableRequest, SendableRequest, ResultParsing {
+    var baseUrl: NSURL? 
+    typealias ParsedType = String
+    func parseData(data: NSData) -> ParsedType? {
+        return nil
+    }
+}
+
 class SendableRequestSpec: QuickSpec {
 
     override func spec() {
@@ -42,26 +50,26 @@ class SendableRequestSpec: QuickSpec {
                     
                     context("which is invalid") {
                         beforeEach {
-                            let value = NSData(base64EncodedString: "bslobl", options: [])
+                            let value: NSData? = NSData()
                             data = value
                             session = MockRequestClient(data: data,
                                 response: nil, error: nil)
                         }
                         
                         describe("performing the request") {
-                            var result: Result<String>?
-                            
-                            beforeEach {
-                                mock.sendRequest(withClient: session) { res in
-                                    result = res
-                                }
-                            }
-                            
-                            afterEach {
-                                result = nil
-                            }
                             
                             describe("the result") {
+                                
+                                var result: Result<String>?
+                                
+                                beforeEach {
+                                    
+                                    let failer = MockFailable()
+                                    
+                                    failer.sendRequest(withClient: session) { res in
+                                        result = res
+                                    }
+                                }
                                 
                                 it("should not be nil") {
                                     expect(result).toNot(beNil())
@@ -106,11 +114,8 @@ class SendableRequestSpec: QuickSpec {
                             var result: Result<String>?
                             
                             beforeEach {
-                                waitUntil { done in
-                                    mock.sendRequest(withClient: session) { res in
-                                        result = res
-                                        done()
-                                    }
+                                mock.sendRequest(withClient: session) { res in
+                                    result = res
                                 }
                             }
                             
@@ -163,11 +168,8 @@ class SendableRequestSpec: QuickSpec {
                         
                         var result: Result<String>?
                         beforeEach {
-                            waitUntil { done in
-                                mock.sendRequest(withClient: session) { res in
-                                    result = res
-                                    done()
-                                }
+                            mock.sendRequest(withClient: session) { res in
+                                result = res
                             }
                         }
                         

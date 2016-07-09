@@ -35,6 +35,33 @@ extension WeatherCondition {
         default: self = .Additional(string)
         }
     }
+    
+    var stringValue: String {
+        switch self {
+        case .Thunderstorm: return "Thunderstorm"
+        case .Drizzle: return "Drizzle"
+        case .Rain: return "Rain"
+        case .Snow: return "Snow"
+        case .Atmosphere: return "Atmosphere"
+        case .Clear: return "Clear"
+        case .Clouds: return "Clouds"
+        case .Extreme: return "Extreme"
+        case .Additional(let s): return s
+            
+        }
+    }
+}
+
+extension WeatherCondition: Equatable {}
+
+func ==(lhs: WeatherCondition, rhs: WeatherCondition) -> Bool {
+    return lhs.stringValue == rhs.stringValue
+}
+
+extension WeatherCondition: Hashable {
+    var hashValue: Int {
+        return stringValue.hash
+    }
 }
 
 struct Weather {
@@ -73,3 +100,61 @@ extension Weather: JSONConstructable {
     }
     
 }
+
+extension SequenceType where Generator.Element == Weather {
+    
+    func elements(forHours hours: Int) -> [Weather] {
+        let date = NSDate().dateByAddingTimeInterval(NSTimeInterval(hours * 3600))
+        return filter {
+            return $0.end.timeIntervalSinceNow > 0 && $0.end.timeIntervalSince1970 < date.timeIntervalSince1970
+        }
+    }
+    
+    func averageTemperature(inUnit unit: UnitTemperature) -> Temperature? {
+        var count = 0
+        let total: Double = reduce(0) {
+            count += 1
+            return $0.0 + $0.1.temperature.converted(to: unit).value
+        }
+        
+        guard count > 0 else { return nil }
+        
+        let average = total / Double(count)
+        return Temperature(value: average, type: unit)
+    }
+    
+    func mostOccuringCondition() -> WeatherCondition? {
+        
+        let counts: [WeatherCondition: Int] = {
+            var counts: [WeatherCondition: Int] = [:]
+            forEach({ (w: Weather) in
+                if let count = counts[w.condition] {
+                    counts[w.condition] = count + 1
+                } else {
+                    counts[w.condition] = 1
+                }
+            })
+            return counts
+        }()
+        
+        var currentCount: Int?
+        
+        var highest: WeatherCondition?
+        
+        counts.forEach { (val: (condition: WeatherCondition, num: Int)) in
+            if let count = currentCount {
+                if val.num > count {
+                    currentCount = val.num
+                    highest = val.condition
+                }
+            } else {
+                currentCount = val.num
+                highest = val.condition
+            }
+        }
+        
+        return highest
+    }
+    
+}
+

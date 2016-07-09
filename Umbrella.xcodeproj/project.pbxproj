@@ -36,6 +36,7 @@
 		4FAC4D0A1D2DD86C0099511F /* RequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4D091D2DD86C0099511F /* RequestClient.swift */; };
 		4FAC4D0D1D2DDAA70099511F /* MockRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4D0C1D2DDAA70099511F /* MockRequestClient.swift */; };
 		4FAC4D0F1D2DDB3F0099511F /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4D0E1D2DDB3F0099511F /* MockLocationService.swift */; };
+		4FCEA17C1D3063EA00FA5890 /* WeatherConditionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEA17B1D3063EA00FA5890 /* WeatherConditionSpec.swift */; };
 		4FD74A581D2B3DFA007DEF38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD74A571D2B3DFA007DEF38 /* AppDelegate.swift */; };
 		4FD74A5D1D2B3DFA007DEF38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FD74A5B1D2B3DFA007DEF38 /* Main.storyboard */; };
 		4FD74A5F1D2B3DFA007DEF38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FD74A5E1D2B3DFA007DEF38 /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		4FAC4D091D2DD86C0099511F /* RequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestClient.swift; path = Request/RequestClient.swift; sourceTree = "<group>"; };
 		4FAC4D0C1D2DDAA70099511F /* MockRequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockRequestClient.swift; path = Mocks/Request/MockRequestClient.swift; sourceTree = "<group>"; };
 		4FAC4D0E1D2DDB3F0099511F /* MockLocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockLocationService.swift; path = Mocks/Services/MockLocationService.swift; sourceTree = "<group>"; };
+		4FCEA17B1D3063EA00FA5890 /* WeatherConditionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherConditionSpec.swift; path = Models/WeatherConditionSpec.swift; sourceTree = "<group>"; };
 		4FD74A541D2B3DFA007DEF38 /* Umbrella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umbrella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD74A571D2B3DFA007DEF38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FD74A5C1D2B3DFA007DEF38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				4FAC4CEC1D2C69400099511F /* TemperatureTests.swift */,
 				4FAC4CF11D2C7D860099511F /* WeatherTests.swift */,
 				4FAC4CF81D2D80820099511F /* ForecastSpec.swift */,
+				4FCEA17B1D3063EA00FA5890 /* WeatherConditionSpec.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				4FAC4CF51D2C7EDD0099511F /* WeatherData.swift in Sources */,
 				4FAC4D0D1D2DDAA70099511F /* MockRequestClient.swift in Sources */,
 				4FAC4CDB1D2BF5C00099511F /* WeatherViewControllerTests.swift in Sources */,
+				4FCEA17C1D3063EA00FA5890 /* WeatherConditionSpec.swift in Sources */,
 				4F62FD5F1D2F150200C06A4C /* LocationServiceSpec.swift in Sources */,
 				4FAC4D081D2DD7E60099511F /* ForecastServiceSpec.swift in Sources */,
 				4FAC4CF21D2C7D860099511F /* WeatherTests.swift in Sources */,
