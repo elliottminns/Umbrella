@@ -59,9 +59,13 @@ class WeatherCell: UITableViewCell {
         weatherImageView?.image = weather.icon?.image
         
         descriptionLabel?.text = weather.description.capitalizedString
+        descriptionLabel?.textColor = Defaults.Color.Primary.base
         
-        temperatureLabel?.text = weather.temperature.converted(to: .Celsius).description
+        let locale = NSLocale.currentLocale()
+        temperatureLabel?.text = weather.temperature.descriptionForLocale(locale)
+        temperatureLabel?.textColor = Defaults.Color.Primary.base
         
         timeLabel?.text = formatter.stringFromDate(weather.start)
+        timeLabel?.textColor = Defaults.Color.Primary.base
     }
 }

@@ -12,6 +12,10 @@ class WeatherViewController: UIViewController {
     
     @IBOutlet var tableViewContainer: UIView?
     
+    @IBOutlet var loadingLabel: UILabel?
+    
+    @IBOutlet var loadingIndicator: UIActivityIndicatorView?
+    
     let service: ForecastService = ForecastService()
     
     var forecast: Forecast? {
@@ -34,19 +38,22 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = Defaults.Color.Blue.base
+        loadingLabel?.text = "Loading Weather"
+        loadingLabel?.font = Defaults.Fonts.Normal.font
+        loadingLabel?.textColor = Defaults.Color.Secondary.base
+        loadingIndicator?.startAnimating()
+        view.backgroundColor = Defaults.Color.Primary.base
         
         let addObs = NSNotificationCenter.defaultCenter().addObserverForName
+        let queue = NSOperationQueue.mainQueue()
         addObs(UIApplicationDidBecomeActiveNotification, object: nil,
-               queue: nil) { (notification) in
+               queue: queue) { (notification) in
                 self.getForecast(fromService: self.service)
         }
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        LoadingView.show()
-        getForecast(fromService: service)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -75,9 +82,12 @@ class WeatherViewController: UIViewController {
 
 extension WeatherViewController {
     func getForecast<T: Service where T.Data == Forecast>(fromService service: T) {
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+         
         service.get { [weak self] (result) in
             
-            LoadingView.dismiss()
+            self?.hideLoadingViews()
             
             switch result {
             case .Success(let forecast):
@@ -85,6 +95,20 @@ extension WeatherViewController {
             case .Failure(let error):
                 self?.handle(error: error)
             }
+            
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
+    }
+    
+    func hideLoadingViews() {
+        UIView.animateWithDuration(0.3, animations: { 
+            self.loadingIndicator?.alpha = 0.0
+            self.loadingLabel?.alpha = 0.0
+            }) { complete in
+                self.loadingIndicator?.stopAnimating()
+                self.loadingLabel?.hidden = true
+                self.loadingIndicator?.alpha = 1.0
+                self.loadingLabel?.alpha = 1.0
         }
     }
 }

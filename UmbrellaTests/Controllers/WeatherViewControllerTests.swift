@@ -30,7 +30,7 @@ class WeatherViewControllerSpec: QuickSpec {
             
             it("should set the correct background color") {
                 expect(controller.view.backgroundColor)
-                    .to(equal(Defaults.Color.Blue.base))
+                    .to(equal(Defaults.Color.Primary.base))
             }
         }
         

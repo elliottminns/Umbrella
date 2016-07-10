@@ -33,7 +33,7 @@ class WeatherHeaderView: UIView {
     
     
     func setup() {
-        backgroundColor = Defaults.Color.Blue.base
+        backgroundColor = Defaults.Color.Primary.base
         setupViews()
     }
     
@@ -88,7 +88,9 @@ class WeatherHeaderView: UIView {
     
     func setupTemperatureLabel() {
         loadLabel(temperatureLabel, withFontSize: .Header)
-        temperatureLabel.text = forecast.currentTemperature(inUnit: .Celsius)?.description
+        let locale = NSLocale.currentLocale()
+        temperatureLabel.text = forecast.currentTemperature?
+            .descriptionForLocale(locale)
         
         let constraints = loadLabelConstraints(forLabel: temperatureLabel,
                                                withTopView: descriptionLabel)

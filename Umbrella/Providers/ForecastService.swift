@@ -15,18 +15,20 @@ class ForecastService {
     
     typealias Data = Forecast
     
-    var locationService: LocationService?
+    let locationService: LocationService = LocationService()
+    
+    private var active = false
     
     func get<T: Service where T.Data == CLLocation>(withLocationService locationService: T,
              callback: Callback) {
         
-        locationService.get { (result) in
+        locationService.get { [weak self] (result) in
             
             switch result {
             case .Failure(let error):
                 return callback(result: Result.Failure(error))
             case .Success(let location):
-                self.forecast(forLocation: location, callback: callback)
+                self?.forecast(forLocation: location, callback: callback)
             }
             
         }
@@ -35,12 +37,12 @@ class ForecastService {
     private func forecast(forLocation location: CLLocation,
                                       callback: Callback) {
         let request = ForecastRequest(location: location)
-        request.sendRequest { (result) in
+        request.sendRequest { [weak self] (result) in
             
             switch result {
             case .Failure(_): callback(result: result)
             case .Success(let forecast):
-                self.getCurrentWeather(withLocation: location,
+                self?.getCurrentWeather(withLocation: location,
                     forForecast: forecast, callback: callback)
             }
         }
@@ -67,8 +69,12 @@ class ForecastService {
 extension ForecastService: Service {
     
     func get(callback: Callback) {
-        let locationService = LocationService()
-        get(withLocationService: locationService, callback: callback)
-        self.locationService = locationService
+        if (!active) {
+            active = true
+            get(withLocationService: locationService) { [weak self] result in
+                self?.active = false
+                callback(result: result)
+            }
+        }
     }
 }

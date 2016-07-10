@@ -22,6 +22,8 @@ class LocationService: NSObject {
     
     var callback: ((result: Result<Data>) -> ())?
     
+    var currentStatus: CLAuthorizationStatus?
+    
     override convenience init() {
         let manager = CLLocationManager()
         self.init(locationManager: manager)
@@ -64,8 +66,10 @@ extension LocationService: CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager,
                          didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        guard let callback = self.callback else { return }
-        self.get(callback)
+        if status != currentStatus {
+            currentStatus = status
+            behaviour(forStatus: status)
+        }
     }
 }
 
@@ -76,6 +80,11 @@ extension LocationService: Service {
         self.callback = callback
         
         let status = locationManager.dynamicType.authorizationStatus()
+        
+        if currentStatus == nil {
+           currentStatus = status
+        }
+        
         behaviour(forStatus: status)
     }
     

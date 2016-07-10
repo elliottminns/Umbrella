@@ -28,6 +28,7 @@ class WeatherTableViewController: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refresh),
                                   forControlEvents: .AllEvents)
+        refreshControl?.tintColor = Defaults.Color.Secondary.base
     }
     
     func refresh() {
