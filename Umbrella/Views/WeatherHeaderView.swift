@@ -80,7 +80,23 @@ class WeatherHeaderView: UIView {
                 label.rightAnchor.constraintEqualToAnchor(rightAnchor)
             ]
         } else {
-            constraints = []
+            
+            let topAttribute: NSLayoutAttribute = view == self ? .Top : .Bottom
+            
+            constraints = [
+                NSLayoutConstraint(item: label, attribute: NSLayoutAttribute.Top,
+                    relatedBy: .Equal, toItem: view, attribute: topAttribute,
+                    multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: label, attribute: .Height,
+                    relatedBy: .Equal, toItem: self, attribute: .Height,
+                    multiplier: 0.32, constant: 0),
+                NSLayoutConstraint(item: label, attribute: .Left,
+                    relatedBy: .Equal, toItem: self, attribute: .Left,
+                    multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: label, attribute: .Right,
+                    relatedBy: .Equal, toItem: self, attribute: .Right,
+                    multiplier: 1, constant: 0),
+            ]
         }
         
         return constraints

@@ -27,11 +27,24 @@
                                     <constraint firstAttribute="width" secondItem="rLK-zF-bpo" secondAttribute="height" multiplier="1:1" id="UcK-bW-zZv"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="rd4-9p-PPw">
-                                <rect key="frame" x="291" y="366" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="rd4-9p-PPw">
+                                <rect key="frame" x="290" y="358" width="20" height="20"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loading Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKg-tS-yLG">
-                                <rect key="frame" x="216" y="192" width="168" height="29"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHR-9G-J3K">
+                                <rect key="frame" x="242" y="348.5" width="116" height="39"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UHR-9G-J3K" secondAttribute="height" multiplier="3:1" id="Cdd-Ka-Afs"/>
+                                </constraints>
+                                <state key="normal" title="Retry">
+                                    <color key="titleColor" red="0.20392156859999999" green="0.25098039220000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="retryButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="viV-xn-EI2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKg-tS-yLG">
+                                <rect key="frame" x="224" y="218" width="152.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -48,7 +61,10 @@
                             <constraint firstItem="rLK-zF-bpo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4AV-Od-fQ3"/>
                             <constraint firstItem="rd4-9p-PPw" firstAttribute="centerX" secondItem="rLK-zF-bpo" secondAttribute="centerX" id="5K0-Cn-Axo"/>
                             <constraint firstItem="rLK-zF-bpo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="755-0j-sRA"/>
+                            <constraint firstItem="UHR-9G-J3K" firstAttribute="centerY" secondItem="rd4-9p-PPw" secondAttribute="centerY" id="80V-v8-V1J"/>
                             <constraint firstItem="rLK-zF-bpo" firstAttribute="top" secondItem="iKg-tS-yLG" secondAttribute="bottom" id="Amh-1l-3qj"/>
+                            <constraint firstItem="UHR-9G-J3K" firstAttribute="leading" secondItem="rLK-zF-bpo" secondAttribute="trailing" constant="-81" id="D6y-DC-b5W"/>
+                            <constraint firstItem="UHR-9G-J3K" firstAttribute="width" secondItem="rLK-zF-bpo" secondAttribute="width" id="M1C-xI-xv5"/>
                             <constraint firstItem="iKg-tS-yLG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nhi-ms-xdh"/>
                             <constraint firstAttribute="trailing" secondItem="GwU-QZ-AmK" secondAttribute="trailing" id="OOo-VM-BhF"/>
                             <constraint firstItem="GwU-QZ-AmK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aWu-tQ-bcM"/>
@@ -56,16 +72,19 @@
                             <constraint firstItem="GwU-QZ-AmK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="if1-CN-POe"/>
                             <constraint firstItem="rLK-zF-bpo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="160" id="lSd-sW-Gs1"/>
                             <constraint firstItem="rd4-9p-PPw" firstAttribute="top" secondItem="rLK-zF-bpo" secondAttribute="bottom" id="nha-me-YDO"/>
+                            <constraint firstItem="UHR-9G-J3K" firstAttribute="centerX" secondItem="rd4-9p-PPw" secondAttribute="centerX" id="xRj-xu-lPF"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="lSd-sW-Gs1"/>
+                                <exclude reference="D6y-DC-b5W"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="loadingIndicator" destination="rd4-9p-PPw" id="jCy-fd-Fxr"/>
                         <outlet property="loadingLabel" destination="iKg-tS-yLG" id="T0d-et-pJ7"/>
+                        <outlet property="retryButton" destination="UHR-9G-J3K" id="SQL-Xb-ZQT"/>
                         <outlet property="tableViewContainer" destination="GwU-QZ-AmK" id="IDD-m8-SaJ"/>
                     </connections>
                 </viewController>
@@ -89,14 +108,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunny" translatesAutoresizingMaskIntoConstraints="NO" id="gGY-B2-lID">
-                                            <rect key="frame" x="20" y="10" width="70" height="70"/>
+                                            <rect key="frame" x="15" y="10" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="2xb-l0-u7c"/>
                                                 <constraint firstAttribute="width" secondItem="gGY-B2-lID" secondAttribute="height" multiplier="1:1" id="Ud9-nB-VIa"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tkJ-0A-ET8">
-                                            <rect key="frame" x="98" y="20" width="432" height="50"/>
+                                            <rect key="frame" x="93" y="20" width="437" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYu-wo-aoL">
                                                     <rect key="frame" x="0.0" y="0.0" width="42" height="25"/>
@@ -135,7 +154,7 @@
                                         <constraint firstAttribute="trailing" secondItem="rts-3G-y5q" secondAttribute="trailing" constant="20" id="ASj-DL-keg"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="tkJ-0A-ET8" secondAttribute="trailing" constant="25" id="Ng3-kB-Twe"/>
                                         <constraint firstItem="tkJ-0A-ET8" firstAttribute="leading" secondItem="gGY-B2-lID" secondAttribute="trailing" constant="8" id="Pee-jg-hnJ"/>
-                                        <constraint firstItem="gGY-B2-lID" firstAttribute="leading" secondItem="mno-OR-eks" secondAttribute="leading" constant="20" id="Rmd-gP-Vtt"/>
+                                        <constraint firstItem="gGY-B2-lID" firstAttribute="leading" secondItem="mno-OR-eks" secondAttribute="leading" constant="15" id="Rmd-gP-Vtt"/>
                                         <constraint firstItem="rts-3G-y5q" firstAttribute="centerY" secondItem="mno-OR-eks" secondAttribute="centerY" id="SEu-bu-DQ7"/>
                                         <constraint firstItem="rts-3G-y5q" firstAttribute="leading" secondItem="tkJ-0A-ET8" secondAttribute="trailing" constant="8" id="jIy-to-dqj"/>
                                         <constraint firstItem="gGY-B2-lID" firstAttribute="centerY" secondItem="mno-OR-eks" secondAttribute="centerY" id="m5Q-Qm-Md4"/>
