@@ -16,6 +16,8 @@
 		4F9B0FB81D31D17B004AE12D /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B0FB71D31D17B004AE12D /* WeatherRequest.swift */; };
 		4F9B0FBA1D31D3BE004AE12D /* OpenWeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B0FB91D31D3BE004AE12D /* OpenWeatherRequest.swift */; };
 		4F9B0FBC1D31D681004AE12D /* WeatherRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B0FBB1D31D681004AE12D /* WeatherRequestSpec.swift */; };
+		4F9B0FC21D32E4E9004AE12D /* Configurations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F9B0FC11D32E4E9004AE12D /* Configurations.plist */; };
+		4F9B0FC41D32E59E004AE12D /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B0FC31D32E59E004AE12D /* ConfigurationManager.swift */; };
 		4FAC4CCE1D2BE8390099511F /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CCD1D2BE8390099511F /* Weather.swift */; };
 		4FAC4CD11D2BF1030099511F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CD01D2BF1030099511F /* Result.swift */; };
 		4FAC4CD51D2BF2020099511F /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4CD41D2BF2020099511F /* WeatherViewController.swift */; };
@@ -82,6 +84,8 @@
 		4F9B0FB71D31D17B004AE12D /* WeatherRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherRequest.swift; path = Request/WeatherRequest.swift; sourceTree = "<group>"; };
 		4F9B0FB91D31D3BE004AE12D /* OpenWeatherRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenWeatherRequest.swift; path = Request/OpenWeatherRequest.swift; sourceTree = "<group>"; };
 		4F9B0FBB1D31D681004AE12D /* WeatherRequestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherRequestSpec.swift; path = Request/WeatherRequestSpec.swift; sourceTree = "<group>"; };
+		4F9B0FC11D32E4E9004AE12D /* Configurations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configurations.plist; sourceTree = SOURCE_ROOT; };
+		4F9B0FC31D32E59E004AE12D /* ConfigurationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigurationManager.swift; path = Configurations/ConfigurationManager.swift; sourceTree = "<group>"; };
 		4FAC4CCD1D2BE8390099511F /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Weather.swift; path = Models/Weather.swift; sourceTree = "<group>"; };
 		4FAC4CD01D2BF1030099511F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Providers/Result.swift; sourceTree = "<group>"; };
 		4FAC4CD41D2BF2020099511F /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherViewController.swift; path = Controllers/WeatherViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +163,15 @@
 			children = (
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		4F9B0FC01D32E4CA004AE12D /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				4F9B0FC11D32E4E9004AE12D /* Configurations.plist */,
+				4F9B0FC31D32E59E004AE12D /* ConfigurationManager.swift */,
+			);
+			name = Configurations;
 			sourceTree = "<group>";
 		};
 		4FAC4CC51D2B3FA40099511F /* Models */ = {
@@ -314,6 +327,7 @@
 		4FD74A561D2B3DFA007DEF38 /* Umbrella */ = {
 			isa = PBXGroup;
 			children = (
+				4F9B0FC01D32E4CA004AE12D /* Configurations */,
 				4FCEA17F1D317FC600FA5890 /* Views */,
 				4FAC4CFE1D2D8F8B0099511F /* Defaults */,
 				4FAC4CD31D2BF19E0099511F /* Controllers */,
@@ -479,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FD74A621D2B3DFA007DEF38 /* LaunchScreen.storyboard in Resources */,
+				4F9B0FC21D32E4E9004AE12D /* Configurations.plist in Resources */,
 				4FD74A5F1D2B3DFA007DEF38 /* Assets.xcassets in Resources */,
 				4FD74A5D1D2B3DFA007DEF38 /* Main.storyboard in Resources */,
 			);
@@ -517,6 +532,7 @@
 				4FAC4CEB1D2C68DC0099511F /* Temperature.swift in Sources */,
 				4FCEA1811D317FDC00FA5890 /* WeatherHeaderView.swift in Sources */,
 				4FAC4D041D2D96990099511F /* ForecastService.swift in Sources */,
+				4F9B0FC41D32E59E004AE12D /* ConfigurationManager.swift in Sources */,
 				4FD74A881D2B3EBA007DEF38 /* Service.swift in Sources */,
 				4FAC4CF71D2D800F0099511F /* Forecast.swift in Sources */,
 				4FD74A581D2B3DFA007DEF38 /* AppDelegate.swift in Sources */,

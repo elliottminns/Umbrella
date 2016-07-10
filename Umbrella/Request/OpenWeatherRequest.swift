@@ -35,7 +35,7 @@ extension OpenWeatherRequest {
     
     var parameters: [String : AnyObject] {
         return [
-            "APPID": "5af4c3629c715e12a0f1c4048e017a22",
+            "APPID": ConfigurationManager.sharedManager.openWeatherMapToken,
             "lat": latitude,
             "lon": longitude,
             "cnt": count
