@@ -16,13 +16,54 @@ class TemperatureSpec: QuickSpec {
         
         var temp: Temperature!
         
+        describe("the description") {
+            context("setting a temperature of 18.6 ºC") {
+                beforeEach {
+                    temp = Temperature(value: 18.6, type: .Celsius)
+                }
+                
+                it("Should have the correct rounding description") {
+                    expect(temp.description).to(equal("19 ºC"))
+                }
+                
+                describe("a description using a locale") {
+                    
+                    var locale: NSLocale!
+                    
+                    context("using a metric system locale") {
+                        
+                        beforeEach {
+                            locale = NSLocale(localeIdentifier: "en_GB")
+                        }
+                        
+                        it("should produce the right description") {
+                            expect(temp.descriptionForLocale(locale))
+                                .to(equal("19 ºC"))
+                        }
+                    }
+                    
+                    context("using an imperial system locale") {
+                        
+                        beforeEach {
+                            locale = NSLocale(localeIdentifier: "en_US")
+                        }
+                        
+                        it("should produce the right description") {
+                            expect(temp.descriptionForLocale(locale))
+                                .to(equal("65 ºF"))
+                        }
+                    }
+                }
+            }
+        }
+        
         describe("setting a temperature of 2º kelvin") {
             beforeEach {
                 temp = Temperature(value: 2, type: .Kelvin)
             }
             
             it("should have the correct description") {
-                expect(temp.description).to(equal("2º K"))
+                expect(temp.description).to(equal("2 ºK"))
             }
             
             it("should convert to kelvin correctly") {
@@ -65,7 +106,7 @@ class TemperatureSpec: QuickSpec {
             }
             
             it("should have the correct description") {
-                expect(temp.description).to(equal("88º F"))
+                expect(temp.description).to(equal("88 ºF"))
             }
             
             it("should convert to kelvin correctly") {
@@ -109,7 +150,7 @@ class TemperatureSpec: QuickSpec {
             }
             
             it("should have the correct description") {
-                expect(temp.description).to(equal("18º C"))
+                expect(temp.description).to(equal("18 ºC"))
             }
             
             it("should convert to kelvin correctly") {

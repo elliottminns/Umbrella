@@ -26,7 +26,7 @@ struct Temperature {
     }
     
     var description: String {
-        let valString = "\(Int(value))º"
+        let valString = "\(Int(round(value))) º"
         let symbol: String
         
         switch type {
@@ -35,7 +35,17 @@ struct Temperature {
         case .Kelvin: symbol = "K"
         }
         
-        return valString + " " + symbol
+        return valString + symbol
+    }
+    
+    func descriptionForLocale(locale: NSLocale) -> String {
+        if let uses = locale.objectForKey(NSLocaleUsesMetricSystem) where
+            uses.boolValue == true {
+            
+            return self.converted(to: .Celsius).description
+        } else {
+            return self.converted(to: .Farenheit).description
+        }
     }
     
     func converted(to unit: UnitTemperature) -> Temperature {

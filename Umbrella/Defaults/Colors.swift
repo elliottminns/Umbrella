@@ -17,6 +17,7 @@ extension Defaults {
         case Green
         case Gray
         case BlueGray
+        case White
     }
 }
 
@@ -28,6 +29,7 @@ extension Defaults.Color {
         case .Green: return UIColor(red: 0.314, green: 0.682, blue: 0.333, alpha: 1)
         case .Gray: return UIColor(red: 0.62, green: 0.62, blue: 0.62, alpha: 1)
         case .BlueGray: return UIColor(red: 0.38, green: 0.49, blue: 0.541, alpha: 1)
+        case .White: return UIColor.whiteColor()
         }
     }
 }

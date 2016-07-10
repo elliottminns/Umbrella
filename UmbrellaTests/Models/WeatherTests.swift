@@ -80,7 +80,10 @@ class WeatherSpec: QuickSpec {
                             let end = start.dateByAddingTimeInterval(threeHour)
                             let w = Weather(start: start, end: end,
                                             condition: .Clouds, description: "some clouds",
-                                            temperature: Temperature(value: 15, type: .Celsius))
+                                            temperature: Temperature(value: 15, type: .Celsius),
+                                            icon: .CloudyNight)
+                            
+                            
                             weather.append(w)
                         }
                         
@@ -198,6 +201,14 @@ class WeatherSpec: QuickSpec {
                     
                     it("should have the correct end time") {
                         expect(weather?.end).to(equal(data.end))
+                    }
+                    
+                    it("should have an icon") {
+                        expect(weather?.icon).toNot(beNil())
+                    }
+                    
+                    it("should have the correct icon") {
+                        expect(weather?.icon).to(equal(WeatherIcon.Rain))
                     }
                 }
             }

@@ -48,6 +48,12 @@ extension LocationService: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         
+        if #available(iOS 9.0, *) {
+            
+        } else {
+            manager.stopUpdatingLocation()
+        }
+        
         let result = Result<Data>.Success(location)
         callback?(result: result)
     }
@@ -77,7 +83,12 @@ extension LocationService: Service {
         switch status {
             
         case .AuthorizedAlways, .AuthorizedWhenInUse:
-            locationManager.requestLocation()
+            
+            if #available(iOS 9.0, *) {
+                locationManager.requestLocation()
+            } else {
+                locationManager.startUpdatingLocation()
+            }
             
         case .Denied:
             error(withType: .LocationDenied)

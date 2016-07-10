@@ -21,6 +21,8 @@ class MockRequestClient: RequestClient {
     
     var data: NSData?
     
+    var weatherData: NSData?
+    
     var response: NSURLResponse?
     
     var error: NSError?
@@ -31,10 +33,24 @@ class MockRequestClient: RequestClient {
         self.error = error
     }
     
+    init(forecastData: NSData?, weatherData: NSData?) {
+        data = forecastData
+        self.weatherData = weatherData
+    }
     
     func perform(request request: NSURLRequest, callback: ClientCallback) {
         self.request = request
         self.sessionCalled = true
-        callback(data: data, response: response, error: error)
+        
+        if weatherData == nil {
+            callback(data: data, response: response, error: error)
+        } else {
+            
+            if request.URL?.path == "/data/2.5/weather" {
+                callback(data: weatherData, response: response, error: error)
+            } else {
+                callback(data: data, response: response, error: error)
+            }
+        }
     }
 }

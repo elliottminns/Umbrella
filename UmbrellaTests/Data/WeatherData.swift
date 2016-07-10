@@ -14,8 +14,8 @@ struct WeatherData: TestData {
     let tempMin: Double
     let tempMax: Double
     let description: String
-    let end: NSDate
     let start: NSDate
+    let end: NSDate
     let main: WeatherCondition
     let json: String
 }
@@ -32,8 +32,8 @@ struct ResponseData {
                                tempMin: 281.15,
                                tempMax: 282.551,
                                description: "light rain",
-                               end: NSDate(timeIntervalSince1970: 1467774000),
-                               start: NSDate(timeIntervalSince1970: 1467774000 - 3600 * 3),
+                               start: NSDate(timeIntervalSince1970: 1467774000),
+                               end: NSDate(timeIntervalSince1970: 1467774000 + 3600 * 3),
                                main: .Rain,
                                json: json)
         }

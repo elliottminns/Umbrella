@@ -35,7 +35,32 @@ class ForecastService {
     private func forecast(forLocation location: CLLocation,
                                       callback: Callback) {
         let request = ForecastRequest(location: location)
-        request.sendRequest(callback)
+        request.sendRequest { (result) in
+            
+            switch result {
+            case .Failure(_): callback(result: result)
+            case .Success(let forecast):
+                self.getCurrentWeather(withLocation: location,
+                    forForecast: forecast, callback: callback)
+            }
+        }
+    }
+    
+    private func getCurrentWeather(withLocation location: CLLocation,
+                                                forForecast forecast: Forecast,
+                                                callback: Callback) {
+        let request = WeatherRequest(location: location)
+        request.sendRequest { (result) in
+            switch result {
+            case .Failure(let error):
+                let res = Result<Forecast>.Failure(error)
+                return callback(result: res)
+            case .Success(let weather):
+                var fore = forecast
+                fore.weather.insert(weather, atIndex: 0)
+                return callback(result: Result<Forecast>.Success(fore))
+            }
+        }
     }
 }
 

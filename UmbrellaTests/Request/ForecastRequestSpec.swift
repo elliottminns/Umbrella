@@ -48,8 +48,8 @@ class ForecastRequestSpec: QuickSpec {
                     expect(request.parameters.keys).to(contain("cnt"))
                 }
                 
-                it("should have a count of 6") {
-                    expect(request.parameters["cnt"] as? Int).to(equal(6))
+                it("should have a count of 7") {
+                    expect(request.parameters["cnt"] as? Int).to(equal(7))
                 }
                 
                 it("should have the correct latitude") {

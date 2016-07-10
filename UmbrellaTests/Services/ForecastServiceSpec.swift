@@ -30,11 +30,13 @@ class ForecastServiceSpec: QuickSpec {
                 }
                 
                 context("with a successful mock client") {
-                    let data = ResponseData.Forecast.London.data
+                    let forecastData = ResponseData.Forecast.London.data
+                    let weatherData = ResponseData.Weather.Rain.data
                     var client: MockRequestClient!
                     
                     beforeEach {
-                        client = MockRequestClient(data: data, response: nil, error: nil)
+                        client = MockRequestClient(forecastData: forecastData,
+                            weatherData: weatherData)
                         Requester.defaultClient = client
                         
                         waitUntil { done in

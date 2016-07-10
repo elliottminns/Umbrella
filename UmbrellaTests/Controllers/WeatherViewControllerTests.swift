@@ -21,6 +21,19 @@ class WeatherViewControllerSpec: QuickSpec {
             controller = WeatherViewController()
         }
         
+        describe("loading the weather controller") {
+            beforeEach {
+                Requester.defaultClient = MockRequestClient(forecastData: nil,
+                    weatherData: nil)
+                controller.viewDidLoad()
+            }
+            
+            it("should set the correct background color") {
+                expect(controller.view.backgroundColor)
+                    .to(equal(Defaults.Color.Blue.base))
+            }
+        }
+        
         describe("getting weather") {
             
             var mockService: ForecastServiceMock!

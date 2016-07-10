@@ -15,7 +15,7 @@ struct Forecast {
     
     let placeName: String
     
-    let weather: [Weather]
+    var weather: [Weather]
     
     func currentTemperature(inUnit unit: UnitTemperature) -> Temperature? {
         return weather.first?.temperature.converted(to: unit)

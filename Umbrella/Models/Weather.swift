@@ -9,67 +9,13 @@
 import Foundation
 import CoreLocation
 
-enum WeatherCondition {
-    case Thunderstorm
-    case Drizzle
-    case Rain
-    case Snow
-    case Atmosphere
-    case Clear
-    case Clouds
-    case Extreme
-    case Additional(String)
-}
-
-extension WeatherCondition {
-    init(string: String) {
-        switch string {
-        case "Thunderstorm": self = .Thunderstorm
-        case "Drizzle": self = .Drizzle
-        case "Rain": self = .Rain
-        case "Snow": self = .Snow
-        case "Atmosphere": self = .Atmosphere
-        case "Clear": self = .Clear
-        case "Clouds": self = .Clouds
-        case "Extreme": self = .Extreme
-        default: self = .Additional(string)
-        }
-    }
-    
-    var stringValue: String {
-        switch self {
-        case .Thunderstorm: return "Thunderstorm"
-        case .Drizzle: return "Drizzle"
-        case .Rain: return "Rain"
-        case .Snow: return "Snow"
-        case .Atmosphere: return "Atmosphere"
-        case .Clear: return "Clear"
-        case .Clouds: return "Clouds"
-        case .Extreme: return "Extreme"
-        case .Additional(let s): return s
-            
-        }
-    }
-}
-
-extension WeatherCondition: Equatable {}
-
-func ==(lhs: WeatherCondition, rhs: WeatherCondition) -> Bool {
-    return lhs.stringValue == rhs.stringValue
-}
-
-extension WeatherCondition: Hashable {
-    var hashValue: Int {
-        return stringValue.hash
-    }
-}
-
 struct Weather {
     let start: NSDate
     let end: NSDate
     let condition: WeatherCondition
     let description: String
     let temperature: Temperature
+    let icon: WeatherIcon?
 }
 
 extension Weather: JSONConstructable {
@@ -87,16 +33,24 @@ extension Weather: JSONConstructable {
         }
         
         
-        let end = NSDate(timeIntervalSince1970: NSTimeInterval(timestamp))
-        let start = end.dateByAddingTimeInterval(-3600 * 3)
+        let start = NSDate(timeIntervalSince1970: NSTimeInterval(timestamp))
+        let end = start.dateByAddingTimeInterval(3600 * 3)
         let condition = WeatherCondition(string: cond)
         let temperature = Temperature(value: temp, type: .Kelvin)
+        
+        let weatherIcon: WeatherIcon?
+        if let icon = weather["icon"] as? String {
+            weatherIcon = WeatherIcon(string: icon)
+        } else {
+            weatherIcon = nil
+        }
         
         self = Weather(start: start,
                        end: end,
                        condition: condition,
                        description: description,
-                       temperature: temperature)
+                       temperature: temperature,
+                       icon: weatherIcon)
     }
     
 }
