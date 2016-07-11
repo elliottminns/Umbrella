@@ -60,6 +60,7 @@ class MockLocationManager: CLLocationManager {
     }
     
     override func startUpdatingLocation() {
+        requestLocationCalled = true
         startUpdatingLocationCalled = true
         if let location = locationResponse {
             delegate?.locationManager!(self, didUpdateLocations: [location])
@@ -144,11 +145,7 @@ class LocationServiceSpec: QuickSpec {
                 }
                 
                 it("should request the location from the manager") {
-                    if #available(iOS 9.0, *) {
-                        expect(manager.requestLocationCalled).to(beTrue())
-                    } else {
-                        expect(manager.startUpdatingLocationCalled).to(beTrue())
-                    }
+                    expect(manager.requestLocationCalled).to(beTrue())
                 }
             }
             
@@ -158,11 +155,7 @@ class LocationServiceSpec: QuickSpec {
                 }
                 
                 it("should request the location from the manager") {
-                    if #available(iOS 9.0, *) {
-                        expect(manager.requestLocationCalled).to(beTrue())
-                    } else {
-                        expect(manager.startUpdatingLocationCalled).to(beTrue())
-                    }
+                    expect(manager.requestLocationCalled).to(beTrue())
                 }
             }
             

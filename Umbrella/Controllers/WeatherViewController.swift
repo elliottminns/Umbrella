@@ -10,13 +10,13 @@ import UIKit
 
 class WeatherViewController: UIViewController {
     
-    @IBOutlet var tableViewContainer: UIView?
+    @IBOutlet weak var tableViewContainer: UIView?
     
-    @IBOutlet var loadingLabel: UILabel?
+    @IBOutlet weak var loadingLabel: UILabel?
     
-    @IBOutlet var loadingIndicator: UIActivityIndicatorView?
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView?
     
-    @IBOutlet var retryButton: UIButton?
+    @IBOutlet weak var retryButton: UIButton?
     
     let service: ForecastService = ForecastService()
     
@@ -42,7 +42,9 @@ class WeatherViewController: UIViewController {
         
         loadingLabel?.font = Defaults.Fonts.Normal.font
         loadingLabel?.textColor = Defaults.Color.Secondary.base
+        
         view.backgroundColor = Defaults.Color.Primary.base
+        
         retryButton?.backgroundColor = Defaults.Color.Secondary.base
         retryButton?.setTitleColor(Defaults.Color.Primary.base,
                                    forState: [.Normal, .Highlighted])
@@ -94,21 +96,11 @@ class WeatherViewController: UIViewController {
             })
         }
     }
-}
-
-// MARK: - Actions
-extension WeatherViewController {
-    @IBAction func retryButtonPressed(sender: UIButton) {
-        displayLoading()
-        getForecast(fromService: service)
-    }
-}
-
-extension WeatherViewController {
+    
     func getForecast<T: Service where T.Data == Forecast>(fromService service: T) {
         
         displayLoading()
-         
+        
         service.get { [weak self] (result) in
             
             switch result {
@@ -118,10 +110,41 @@ extension WeatherViewController {
             case .Failure(let error):
                 self?.handle(error: error)
             }
-            
-            
         }
     }
+    
+    func showAlert(title title: String, message: String, actions: [UIAlertAction]) {
+        
+        let alert = UIAlertController(title: title, message: message,
+                                      preferredStyle: .Alert)
+        actions.forEach { action in
+            alert.addAction(action)
+        }
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func displayRetry() {
+        
+        loadingIndicator?.stopAnimating()
+        
+        if tableViewContainer?.hidden == true {
+            loadingLabel?.text = "Could not load weather"
+            loadingLabel?.hidden = false
+            retryButton?.hidden = false
+        }
+        
+    }
+}
+
+// MARK: - Actions
+extension WeatherViewController {
+    @IBAction func retryButtonPressed(sender: UIButton) {
+        getForecast(fromService: service)
+    }
+}
+
+extension WeatherViewController {
     
     func hideLoadingViews() {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -194,29 +217,6 @@ extension WeatherViewController {
         }
         
         showAlert(title: title, message: message, actions: actions)
-    }
-    
-    func showAlert(title title: String, message: String, actions: [UIAlertAction]) {
-    
-        let alert = UIAlertController(title: title, message: message,
-                                      preferredStyle: .Alert)
-        actions.forEach { action in
-            alert.addAction(action)
-        }
-        
-        presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    func displayRetry() {
-        
-        loadingIndicator?.stopAnimating()
-        
-        if tableViewContainer?.hidden == true {
-            loadingLabel?.text = "Could not load weather"
-            loadingLabel?.hidden = false
-            retryButton?.hidden = false
-        }
-        
     }
 }
 
