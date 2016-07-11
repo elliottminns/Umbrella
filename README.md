@@ -1,5 +1,5 @@
-![Umbrella][logo]
-[logo]: http://i.imgur.com/DxyDk5B.png "Umbrella Logo"
+<img src="http://url.to/image.png" alt="Umbrella" 
+    align="center" height="150" width="150" />
 
 ## Build Instructions
 
