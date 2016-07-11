@@ -208,7 +208,9 @@ extension WeatherViewController {
         
         if showSettings {
             let show = UIAlertAction(title: "Settings", style: .Default) { alert in
+                
                 let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)
+                
                 if let url = settingsUrl {
                     UIApplication.sharedApplication().openURL(url)
                 }

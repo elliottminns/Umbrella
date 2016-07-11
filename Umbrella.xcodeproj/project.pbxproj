@@ -57,6 +57,7 @@
 		4FD74A781D2B3DFA007DEF38 /* UmbrellaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD74A771D2B3DFA007DEF38 /* UmbrellaUITests.swift */; };
 		4FD74A881D2B3EBA007DEF38 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD74A871D2B3EBA007DEF38 /* Service.swift */; };
 		4FEF9B021D34225E00081166 /* WeatherHeaderViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9B011D34225E00081166 /* WeatherHeaderViewSpec.swift */; };
+		4FEF9B041D34351E00081166 /* WeatherCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9B031D34351E00081166 /* WeatherCellSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		4FD74A791D2B3DFA007DEF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FD74A871D2B3EBA007DEF38 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Providers/Service.swift; sourceTree = "<group>"; };
 		4FEF9B011D34225E00081166 /* WeatherHeaderViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherHeaderViewSpec.swift; path = Views/WeatherHeaderViewSpec.swift; sourceTree = "<group>"; };
+		4FEF9B031D34351E00081166 /* WeatherCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherCellSpec.swift; path = Views/WeatherCellSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				4FEF9B011D34225E00081166 /* WeatherHeaderViewSpec.swift */,
+				4FEF9B031D34351E00081166 /* WeatherCellSpec.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				4FAC4D0D1D2DDAA70099511F /* MockRequestClient.swift in Sources */,
 				4FAC4CDB1D2BF5C00099511F /* WeatherViewControllerTests.swift in Sources */,
 				4FCEA17C1D3063EA00FA5890 /* WeatherConditionSpec.swift in Sources */,
+				4FEF9B041D34351E00081166 /* WeatherCellSpec.swift in Sources */,
 				4F62FD5F1D2F150200C06A4C /* LocationServiceSpec.swift in Sources */,
 				4FAC4D081D2DD7E60099511F /* ForecastServiceSpec.swift in Sources */,
 				4FAC4CF21D2C7D860099511F /* WeatherTests.swift in Sources */,
