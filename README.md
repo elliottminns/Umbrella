@@ -1,9 +1,12 @@
-# Umbrella
+![Umbrella][logo]
+[logo]: http://i.imgur.com/DxyDk5B.png "Umbrella Logo"
 
 ## Build Instructions
 
 ### Xcode
 To build umbrella, you need to have Xcode 7.0.0 and above, available [here](https://developer.apple.com/xcode/downloads/).
+
+Umbrella runs on both iOS 8 & iOS 9
 
 ### Dependencies
 Once downloaded, you also need to install the dependencies using Carthage in order to run the unit tests. If you do not already have Carthage, you can either install it via [homebrew](http://brew.sh) or via [direct download](https://github.com/Carthage/Carthage/releases).
