@@ -49,6 +49,14 @@ extension WeatherTableViewController {
         return WeatherHeaderView(forecast: forecast)
     }
     
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1
+    }
+    
     override func tableView(tableView: UITableView,
                             heightForHeaderInSection section: Int) -> CGFloat {
         return 140
