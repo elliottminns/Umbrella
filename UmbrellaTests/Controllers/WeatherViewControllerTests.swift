@@ -359,6 +359,46 @@ class WeatherViewControllerSpec: QuickSpec {
                 }
             }
             
+            describe("showing the alert view") {
+                let title = "Alert Title"
+                let message = "Alert Message"
+                var actions: [UIAlertAction] = []
+                
+                var alertController: UIAlertController?
+                
+                beforeEach {
+                    let cancel = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
+                    let dismiss = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
+                    actions.append(cancel)
+                    actions.append(dismiss)
+                    controller.showAlert(title: title, message: message, actions: actions)
+                    alertController = controller.presentedViewController as? UIAlertController
+                }
+                
+                it("should display the alert") {
+                    expect(alertController).toNot(beNil())
+                }
+                
+                it("should have the correct title") {
+                    expect(alertController?.title).to(equal(title))
+                }
+                
+                it("should have the correct message") {
+                    expect(alertController?.message).to(equal(message))
+                }
+                
+                it("should be of type alert") {
+                    expect(alertController?.preferredStyle)
+                        .to(equal(UIAlertControllerStyle.Alert))
+                }
+                
+                it("should have the correct actions") {
+                    for action in actions {
+                        expect(alertController?.actions).to(contain(action))
+                    }
+                }
+            }
+            
             describe("showing the table view") {
                 beforeEach {
                     controller.tableViewContainer?.hidden = true
