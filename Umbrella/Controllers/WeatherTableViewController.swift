@@ -77,7 +77,7 @@ extension WeatherTableViewController {
     
     override func tableView(tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        guard let forecast = forecast else {
+        guard let forecast = forecast where section == 0 else {
             return 0
         }
         
