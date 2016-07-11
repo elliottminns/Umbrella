@@ -185,6 +185,16 @@ class WeatherViewControllerSpec: QuickSpec {
                 UIApplication.sharedApplication().keyWindow!.rootViewController = controller
             }
             
+            describe("Setting the forecast") {
+                let forecast = Forecast(data: ResponseData.Forecast.London.jsonData)
+                
+                it("should set the table controllers forecast") {
+                    expect(controller.tableViewController?.forecast).to(beNil())
+                    controller.forecast = forecast
+                    expect(controller.tableViewController?.forecast).toNot(beNil())
+                }
+            }
+            
             describe("The IB elements") {
                 
                 describe("the table view controller") {
@@ -206,8 +216,22 @@ class WeatherViewControllerSpec: QuickSpec {
                     expect(controller.loadingIndicator).toNot(beNil())
                 }
                 
-                it("should have a retry button") {
-                    expect(controller.retryButton).toNot(beNil())
+                describe("the retry button") {
+                    it("should have the correct target") {
+                        let targets = controller.retryButton?.allTargets()
+                        expect(targets).to(contain(controller))
+                    }
+                    
+                    it("should have the correct action") {
+                        let actions = controller.retryButton?
+                            .actionsForTarget(controller,
+                                              forControlEvent: .TouchUpInside)
+                        let expected = "retryButtonPressed:"
+                        expect(actions).to(contain(expected))
+                    }
+                    it("should exist") {
+                        expect(controller.retryButton).toNot(beNil())
+                    }
                 }
             }
             

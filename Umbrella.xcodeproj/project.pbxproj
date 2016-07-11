@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F2BE3761D33F88C001B1575 /* WeatherTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2BE3751D33F88C001B1575 /* WeatherTableViewControllerSpec.swift */; };
 		4F62FD5F1D2F150200C06A4C /* LocationServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F62FD5E1D2F150200C06A4C /* LocationServiceSpec.swift */; };
 		4F9B0FAC1D31A18E004AE12D /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B0FAB1D31A18E004AE12D /* WeatherCell.swift */; };
 		4F9B0FAE1D31ABFE004AE12D /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9B0FAD1D31ABFE004AE12D /* Fonts.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F2BE3751D33F88C001B1575 /* WeatherTableViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherTableViewControllerSpec.swift; path = Controllers/WeatherTableViewControllerSpec.swift; sourceTree = "<group>"; };
 		4F62FD5E1D2F150200C06A4C /* LocationServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationServiceSpec.swift; path = Services/LocationServiceSpec.swift; sourceTree = "<group>"; };
 		4F9B0FAB1D31A18E004AE12D /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherCell.swift; path = Views/WeatherCell.swift; sourceTree = "<group>"; };
 		4F9B0FAD1D31ABFE004AE12D /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fonts.swift; path = Defaults/Fonts.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				4FAC4CDA1D2BF5C00099511F /* WeatherViewControllerTests.swift */,
+				4F2BE3751D33F88C001B1575 /* WeatherTableViewControllerSpec.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 			files = (
 				4F9B0FB61D31C065004AE12D /* WeatherIconSpecs.swift in Sources */,
 				4F9B0FBC1D31D681004AE12D /* WeatherRequestSpec.swift in Sources */,
+				4F2BE3761D33F88C001B1575 /* WeatherTableViewControllerSpec.swift in Sources */,
 				4FAC4D0F1D2DDB3F0099511F /* MockLocationService.swift in Sources */,
 				4FAC4CED1D2C69400099511F /* TemperatureTests.swift in Sources */,
 				4FAC4CF51D2C7EDD0099511F /* WeatherData.swift in Sources */,
