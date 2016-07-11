@@ -3,7 +3,7 @@
 ## Build Instructions
 
 ### Xcode
-To build umbrella, you need to have Xcode 7.0.0 and above, available [here](https://developer.apple.com/xcode/downloads/).
+To build umbrella, you need to have Xcode 7, available [here](https://developer.apple.com/xcode/downloads/).
 
 Umbrella runs on both iOS 8 & iOS 9
 
