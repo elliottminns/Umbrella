@@ -51,7 +51,11 @@ class WeatherHeaderView: UIView {
         addSubview(label)
     }
     
-    func setupLocationLabel() {
+}
+
+extension WeatherHeaderView {
+
+    private func setupLocationLabel() {
         locationLabel.text = forecast.placeName
         loadLabel(locationLabel, withFontSize: .Header)
         let constraints = loadLabelConstraints(forLabel: locationLabel,
@@ -59,8 +63,8 @@ class WeatherHeaderView: UIView {
         NSLayoutConstraint.activateConstraints(constraints)
     }
     
-    func loadLabelConstraints(forLabel label: UILabel,
-                                       withTopView view: UIView) -> [NSLayoutConstraint] {
+    private func loadLabelConstraints(forLabel label: UILabel,
+                                               withTopView view: UIView) -> [NSLayoutConstraint] {
         let constraints: [NSLayoutConstraint]
         
         if #available(iOS 9.0, *) {
@@ -102,7 +106,7 @@ class WeatherHeaderView: UIView {
         return constraints
     }
     
-    func setupTemperatureLabel() {
+    private func setupTemperatureLabel() {
         loadLabel(temperatureLabel, withFontSize: .Header)
         let locale = NSLocale.currentLocale()
         temperatureLabel.text = forecast.currentTemperature?
@@ -114,7 +118,7 @@ class WeatherHeaderView: UIView {
         
     }
     
-    func setupDescriptionLabel() {
+    private func setupDescriptionLabel() {
         loadLabel(descriptionLabel, withFontSize: .Large)
         descriptionLabel.text = forecast.weather.first?.description.capitalizedString
         let constraints = loadLabelConstraints(forLabel: descriptionLabel,

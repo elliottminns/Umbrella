@@ -56,6 +56,7 @@
 		4FD74A621D2B3DFA007DEF38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FD74A601D2B3DFA007DEF38 /* LaunchScreen.storyboard */; };
 		4FD74A781D2B3DFA007DEF38 /* UmbrellaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD74A771D2B3DFA007DEF38 /* UmbrellaUITests.swift */; };
 		4FD74A881D2B3EBA007DEF38 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD74A871D2B3EBA007DEF38 /* Service.swift */; };
+		4FEF9B021D34225E00081166 /* WeatherHeaderViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9B011D34225E00081166 /* WeatherHeaderViewSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		4FD74A771D2B3DFA007DEF38 /* UmbrellaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaUITests.swift; sourceTree = "<group>"; };
 		4FD74A791D2B3DFA007DEF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FD74A871D2B3EBA007DEF38 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Providers/Service.swift; sourceTree = "<group>"; };
+		4FEF9B011D34225E00081166 /* WeatherHeaderViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherHeaderViewSpec.swift; path = Views/WeatherHeaderViewSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		4F9B0FA51D3190E0004AE12D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4FEF9B011D34225E00081166 /* WeatherHeaderViewSpec.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				4FAC4D081D2DD7E60099511F /* ForecastServiceSpec.swift in Sources */,
 				4FAC4CF21D2C7D860099511F /* WeatherTests.swift in Sources */,
 				4FAC4CD81D2BF2EF0099511F /* WeatherServiceMock.swift in Sources */,
+				4FEF9B021D34225E00081166 /* WeatherHeaderViewSpec.swift in Sources */,
 				4FAC4CFD1D2D85DE0099511F /* Data.swift in Sources */,
 				4FAC4CE91D2C1C660099511F /* SendableRequestSpec.swift in Sources */,
 				4FAC4CE51D2C05800099511F /* RequestSpec.swift in Sources */,
