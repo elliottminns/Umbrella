@@ -1,4 +1,4 @@
-<img src="http://i.imgur.com/DxyDk5B.png" alt="Umbrella" align="left" height="150" width="150" />
+<img src="http://i.imgur.com/DxyDk5B.png" alt="Umbrella" height="150" width="150" />
 
 ## Build Instructions
 
