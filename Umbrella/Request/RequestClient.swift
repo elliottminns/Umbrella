@@ -18,8 +18,16 @@ protocol RequestClient {
 
 class SessionClient: RequestClient {
     
+    let session: NSURLSession
+    
+    init() {
+        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+        config.timeoutIntervalForRequest = 15;
+        config.timeoutIntervalForResource = 30;
+        session = NSURLSession(configuration: config)
+    }
+    
     func perform(request request: NSURLRequest, callback: ClientCallback) {
-        let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, res, err in
             dispatch_async(dispatch_get_main_queue(), { 
                 callback(data: data, response: res, error: err)

@@ -22,6 +22,10 @@ class MockLocationManager: CLLocationManager {
     
     var requestWhenInUseCalled: Bool = false
     
+    var startUpdatingLocationCalled: Bool = false
+    
+    var stopUpdatingLocationCalled: Bool = false
+    
     var returnState: CLAuthorizationStatus = .AuthorizedWhenInUse
     
     static var authStatus = CLAuthorizationStatus.AuthorizedWhenInUse
@@ -53,6 +57,19 @@ class MockLocationManager: CLLocationManager {
         } else if let error = error {
             delegate?.locationManager!(self, didFailWithError: error)
         }
+    }
+    
+    override func startUpdatingLocation() {
+        startUpdatingLocationCalled = true
+        if let location = locationResponse {
+            delegate?.locationManager!(self, didUpdateLocations: [location])
+        } else if let error = error {
+            delegate?.locationManager!(self, didFailWithError: error)
+        }
+    }
+    
+    override func stopUpdatingLocation() {
+        stopUpdatingLocationCalled = true
     }
     
     override func requestWhenInUseAuthorization() {
@@ -127,7 +144,11 @@ class LocationServiceSpec: QuickSpec {
                 }
                 
                 it("should request the location from the manager") {
-                    expect(manager.requestLocationCalled).to(beTrue())
+                    if #available(iOS 9.0, *) {
+                        expect(manager.requestLocationCalled).to(beTrue())
+                    } else {
+                        expect(manager.startUpdatingLocationCalled).to(beTrue())
+                    }
                 }
             }
             
@@ -137,7 +158,11 @@ class LocationServiceSpec: QuickSpec {
                 }
                 
                 it("should request the location from the manager") {
-                    expect(manager.requestLocationCalled).to(beTrue())
+                    if #available(iOS 9.0, *) {
+                        expect(manager.requestLocationCalled).to(beTrue())
+                    } else {
+                        expect(manager.startUpdatingLocationCalled).to(beTrue())
+                    }
                 }
             }
             

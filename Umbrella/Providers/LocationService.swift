@@ -61,6 +61,10 @@ extension LocationService: CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        if #available(iOS 9.0, *) {
+        } else {
+            manager.stopUpdatingLocation()
+        }
         self.error(withType: .LocationFailed)
     }
     
