@@ -18,7 +18,7 @@ protocol RequestClient {
 
 class SessionClient: RequestClient {
     
-    let session: NSURLSession
+    private let session: NSURLSession
     
     init() {
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
