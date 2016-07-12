@@ -58,6 +58,7 @@
 		4FD74A881D2B3EBA007DEF38 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD74A871D2B3EBA007DEF38 /* Service.swift */; };
 		4FEF9B021D34225E00081166 /* WeatherHeaderViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9B011D34225E00081166 /* WeatherHeaderViewSpec.swift */; };
 		4FEF9B041D34351E00081166 /* WeatherCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9B031D34351E00081166 /* WeatherCellSpec.swift */; };
+		4FEF9B071D34769300081166 /* ConfigurationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9B061D34769300081166 /* ConfigurationManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		4FD74A871D2B3EBA007DEF38 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = Providers/Service.swift; sourceTree = "<group>"; };
 		4FEF9B011D34225E00081166 /* WeatherHeaderViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherHeaderViewSpec.swift; path = Views/WeatherHeaderViewSpec.swift; sourceTree = "<group>"; };
 		4FEF9B031D34351E00081166 /* WeatherCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherCellSpec.swift; path = Views/WeatherCellSpec.swift; sourceTree = "<group>"; };
+		4FEF9B061D34769300081166 /* ConfigurationManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigurationManagerTests.swift; path = Configurations/ConfigurationManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,12 +339,12 @@
 			isa = PBXGroup;
 			children = (
 				4F9B0FC01D32E4CA004AE12D /* Configurations */,
-				4FCEA17F1D317FC600FA5890 /* Views */,
-				4FAC4CFE1D2D8F8B0099511F /* Defaults */,
 				4FAC4CD31D2BF19E0099511F /* Controllers */,
-				4FAC4CCF1D2BF0910099511F /* Request */,
+				4FAC4CFE1D2D8F8B0099511F /* Defaults */,
 				4FAC4CC51D2B3FA40099511F /* Models */,
+				4FAC4CCF1D2BF0910099511F /* Request */,
 				4FD74A851D2B3E07007DEF38 /* Services */,
+				4FCEA17F1D317FC600FA5890 /* Views */,
 				4FD74A571D2B3DFA007DEF38 /* AppDelegate.swift */,
 				4FD74A5B1D2B3DFA007DEF38 /* Main.storyboard */,
 				4FD74A5E1D2B3DFA007DEF38 /* Assets.xcassets */,
@@ -355,13 +357,14 @@
 		4FD74A6B1D2B3DFA007DEF38 /* UmbrellaTests */ = {
 			isa = PBXGroup;
 			children = (
-				4F9B0FA51D3190E0004AE12D /* Views */,
-				4FAC4CF31D2C7DA10099511F /* Data */,
+				4FEF9B051D34766E00081166 /* Configurations */,
 				4FAC4CD61D2BF2CA0099511F /* Controllers */,
+				4FAC4CF31D2C7DA10099511F /* Data */,
 				4FAC4CC61D2B409C0099511F /* Mocks */,
 				4FAC4CCC1D2BE7A60099511F /* Models */,
 				4FAC4CE31D2C05680099511F /* Request */,
 				4FD74A861D2B3E0F007DEF38 /* Services */,
+				4F9B0FA51D3190E0004AE12D /* Views */,
 				4FD74A6E1D2B3DFA007DEF38 /* Info.plist */,
 			);
 			path = UmbrellaTests;
@@ -394,6 +397,14 @@
 				4F62FD5E1D2F150200C06A4C /* LocationServiceSpec.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		4FEF9B051D34766E00081166 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				4FEF9B061D34769300081166 /* ConfigurationManagerTests.swift */,
+			);
+			name = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -577,6 +588,7 @@
 				4FAC4CFD1D2D85DE0099511F /* Data.swift in Sources */,
 				4FAC4CE91D2C1C660099511F /* SendableRequestSpec.swift in Sources */,
 				4FAC4CE51D2C05800099511F /* RequestSpec.swift in Sources */,
+				4FEF9B071D34769300081166 /* ConfigurationManagerTests.swift in Sources */,
 				4FAC4D021D2D92270099511F /* ForecastRequestSpec.swift in Sources */,
 				4FAC4CFB1D2D80F50099511F /* ForecastData.swift in Sources */,
 				4FAC4CF91D2D80820099511F /* ForecastSpec.swift in Sources */,

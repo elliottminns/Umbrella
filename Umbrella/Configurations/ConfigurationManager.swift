@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum ConfigurationError: ErrorType {
+    case MissingOpenWeatherMapAppToken
+}
+
 class ConfigurationManager {
     
     static let sharedManager = ConfigurationManager()
@@ -25,11 +29,18 @@ class ConfigurationManager {
             fatalError("Incorrect file format for configurations")
         }
         
-        self.init(configurations: configurations as! [String: AnyObject])
+        do {
+            try self.init(configurations: configurations as! [String: AnyObject])
+        } catch {
+            fatalError("Missing configuration files")
+        }
     }
     
-    init(configurations: [String: AnyObject]) {
-        openWeatherMapToken = configurations["OpenWeatherMap-APPID"] as! String
+    init(configurations: [String: AnyObject]) throws {
+        guard let openWeatherToken = configurations["OpenWeatherMap-APPID"] as? String else {
+            throw ConfigurationError.MissingOpenWeatherMapAppToken
+        }
+        openWeatherMapToken = openWeatherToken
     }
     
 }
