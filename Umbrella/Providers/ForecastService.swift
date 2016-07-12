@@ -69,6 +69,15 @@ class ForecastService {
 extension ForecastService: Service {
     
     func get(callback: Callback) {
+        
+        let arguments = NSProcessInfo.processInfo().arguments
+        
+        if arguments.contains("MOCK_NO_INTERNET") {
+            let error = RequestError(message: "No Internet")
+            let result = Result<Forecast>.Failure(error)
+            return callback(result: result)
+        }
+        
         if (!active) {
             active = true
             get(withLocationService: locationService) { [weak self] result in
