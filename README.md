@@ -1,10 +1,9 @@
-<img src="http://url.to/image.png" alt="Umbrella" 
-    align="center" height="150" width="150" />
+<img src="http://i.imgur.com/DxyDk5B.png" alt="Umbrella" height="150" width="150" />
 
 ## Build Instructions
 
 ### Xcode
-To build umbrella, you need to have Xcode 7.0.0 and above, available [here](https://developer.apple.com/xcode/downloads/).
+To build umbrella, you need to have Xcode 7, available [here](https://developer.apple.com/xcode/downloads/).
 
 Umbrella runs on both iOS 8 & iOS 9
 
