@@ -59,6 +59,7 @@
 		4FEF9B041D34351E00081166 /* WeatherCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9B031D34351E00081166 /* WeatherCellSpec.swift */; };
 		4FEF9B071D34769300081166 /* ConfigurationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9B061D34769300081166 /* ConfigurationManagerTests.swift */; };
 		4FEF9B0E1D34886D00081166 /* WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9B0D1D34886D00081166 /* WeatherUITests.swift */; };
+		4FEF9B101D34929B00081166 /* NoLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9B0F1D34929B00081166 /* NoLocationUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		4FEF9B031D34351E00081166 /* WeatherCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherCellSpec.swift; path = Views/WeatherCellSpec.swift; sourceTree = "<group>"; };
 		4FEF9B061D34769300081166 /* ConfigurationManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigurationManagerTests.swift; path = Configurations/ConfigurationManagerTests.swift; sourceTree = "<group>"; };
 		4FEF9B0D1D34886D00081166 /* WeatherUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherUITests.swift; path = Weather/WeatherUITests.swift; sourceTree = "<group>"; };
+		4FEF9B0F1D34929B00081166 /* NoLocationUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoLocationUITests.swift; path = Weather/NoLocationUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				4FEF9B0D1D34886D00081166 /* WeatherUITests.swift */,
+				4FEF9B0F1D34929B00081166 /* NoLocationUITests.swift */,
 			);
 			name = Weather;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FEF9B0E1D34886D00081166 /* WeatherUITests.swift in Sources */,
+				4FEF9B101D34929B00081166 /* NoLocationUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -81,6 +81,13 @@ extension LocationService: Service {
     
     func get(callback: (result: Result<Data>) -> ()) {
         
+        let arguments = NSProcessInfo.processInfo().arguments
+        
+        if arguments.contains("MOCK_NO_LOCATION") {
+            let error = LocationServiceError.LocationFailed
+            return callback(result: Result.Failure(error))
+        }
+        
         self.callback = callback
         
         let status = locationManager.dynamicType.authorizationStatus()
