@@ -19,6 +19,7 @@ class ConfigurationManager {
     let openWeatherMapToken: String
     
     private convenience init() {
+        
         let bundle = NSBundle.mainBundle()
         
         guard let path = bundle.pathForResource("Configurations", ofType: "plist") else {

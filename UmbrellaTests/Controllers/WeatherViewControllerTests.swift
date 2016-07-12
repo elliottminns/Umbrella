@@ -399,6 +399,42 @@ class WeatherViewControllerSpec: QuickSpec {
                 }
             }
             
+            describe("hiding the loading views") {
+                beforeEach {
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+                    controller.loadingIndicator?.startAnimating()
+                    controller.loadingLabel?.hidden = false
+                    controller.loadingIndicator?.alpha = 0
+                    controller.loadingLabel?.alpha = 0
+                    controller.hideLoadingViews()
+                }
+                
+                it("should hide the network activity indicator") {
+                    let application = UIApplication.sharedApplication()
+                    expect(application.networkActivityIndicatorVisible).to(beFalse())
+                }
+                
+                it("should stop animating the loading indicator") {
+                    expect(controller.loadingIndicator?.isAnimating())
+                        .toEventually(beFalse())
+                }
+                
+                it("should hide the loading label") {
+                    expect(controller.loadingLabel?.hidden)
+                        .toEventually(beTrue())
+                }
+                
+                it("should set the alpha of the indicator to 1.0") {
+                    expect(controller.loadingIndicator?.alpha)
+                        .toEventually(beCloseTo(1.0))
+                }
+                
+                it("should set the alpha of the label to 1.0") {
+                    expect(controller.loadingLabel?.alpha)
+                        .toEventually(beCloseTo(1.0))
+                }
+            }
+            
             describe("showing the table view") {
                 beforeEach {
                     controller.tableViewContainer?.hidden = true
