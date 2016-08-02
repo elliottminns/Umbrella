@@ -47,6 +47,10 @@
 		4FAC4D0A1D2DD86C0099511F /* RequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4D091D2DD86C0099511F /* RequestClient.swift */; };
 		4FAC4D0D1D2DDAA70099511F /* MockRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4D0C1D2DDAA70099511F /* MockRequestClient.swift */; };
 		4FAC4D0F1D2DDB3F0099511F /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAC4D0E1D2DDB3F0099511F /* MockLocationService.swift */; };
+		4FC0BBC01D509EFE0091DFD9 /* CitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0BBBF1D509EFE0091DFD9 /* CitySpec.swift */; };
+		4FC0BBC21D509F3C0091DFD9 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0BBC11D509F3C0091DFD9 /* City.swift */; };
+		4FC0BBC41D50A2970091DFD9 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0BBC31D50A2970091DFD9 /* CitiesViewController.swift */; };
+		4FC0BBC61D50A2A60091DFD9 /* CitiesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0BBC51D50A2A60091DFD9 /* CitiesViewControllerSpec.swift */; };
 		4FCEA17C1D3063EA00FA5890 /* WeatherConditionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEA17B1D3063EA00FA5890 /* WeatherConditionSpec.swift */; };
 		4FCEA17E1D317FAB00FA5890 /* WeatherTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEA17D1D317FAB00FA5890 /* WeatherTableViewController.swift */; };
 		4FCEA1811D317FDC00FA5890 /* WeatherHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEA1801D317FDC00FA5890 /* WeatherHeaderView.swift */; };
@@ -120,6 +124,10 @@
 		4FAC4D091D2DD86C0099511F /* RequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestClient.swift; path = Request/RequestClient.swift; sourceTree = "<group>"; };
 		4FAC4D0C1D2DDAA70099511F /* MockRequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockRequestClient.swift; path = Mocks/Request/MockRequestClient.swift; sourceTree = "<group>"; };
 		4FAC4D0E1D2DDB3F0099511F /* MockLocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockLocationService.swift; path = Mocks/Services/MockLocationService.swift; sourceTree = "<group>"; };
+		4FC0BBBF1D509EFE0091DFD9 /* CitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CitySpec.swift; path = Models/CitySpec.swift; sourceTree = "<group>"; };
+		4FC0BBC11D509F3C0091DFD9 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = Models/City.swift; sourceTree = "<group>"; };
+		4FC0BBC31D50A2970091DFD9 /* CitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CitiesViewController.swift; path = Controllers/CitiesViewController.swift; sourceTree = "<group>"; };
+		4FC0BBC51D50A2A60091DFD9 /* CitiesViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CitiesViewControllerSpec.swift; path = Controllers/CitiesViewControllerSpec.swift; sourceTree = "<group>"; };
 		4FCEA17B1D3063EA00FA5890 /* WeatherConditionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherConditionSpec.swift; path = Models/WeatherConditionSpec.swift; sourceTree = "<group>"; };
 		4FCEA17D1D317FAB00FA5890 /* WeatherTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherTableViewController.swift; path = Controllers/WeatherTableViewController.swift; sourceTree = "<group>"; };
 		4FCEA1801D317FDC00FA5890 /* WeatherHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherHeaderView.swift; path = Views/WeatherHeaderView.swift; sourceTree = "<group>"; };
@@ -194,6 +202,7 @@
 				4FAC4CF61D2D800F0099511F /* Forecast.swift */,
 				4F9B0FAF1D31B181004AE12D /* WeatherCondition.swift */,
 				4F9B0FB31D31B22B004AE12D /* WeatherIcon.swift */,
+				4FC0BBC11D509F3C0091DFD9 /* City.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -215,6 +224,7 @@
 				4FAC4CF81D2D80820099511F /* ForecastSpec.swift */,
 				4FCEA17B1D3063EA00FA5890 /* WeatherConditionSpec.swift */,
 				4F9B0FB51D31C065004AE12D /* WeatherIconSpecs.swift */,
+				4FC0BBBF1D509EFE0091DFD9 /* CitySpec.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -237,6 +247,7 @@
 			children = (
 				4FAC4CD41D2BF2020099511F /* WeatherViewController.swift */,
 				4FCEA17D1D317FAB00FA5890 /* WeatherTableViewController.swift */,
+				4FC0BBC31D50A2970091DFD9 /* CitiesViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -246,6 +257,7 @@
 			children = (
 				4FAC4CDA1D2BF5C00099511F /* WeatherViewControllerTests.swift */,
 				4F2BE3751D33F88C001B1575 /* WeatherTableViewControllerSpec.swift */,
+				4FC0BBC51D50A2A60091DFD9 /* CitiesViewControllerSpec.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -552,6 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FAC4D0A1D2DD86C0099511F /* RequestClient.swift in Sources */,
+				4FC0BBC41D50A2970091DFD9 /* CitiesViewController.swift in Sources */,
 				4F9B0FB41D31B22B004AE12D /* WeatherIcon.swift in Sources */,
 				4FCEA17E1D317FAB00FA5890 /* WeatherTableViewController.swift in Sources */,
 				4F9B0FAC1D31A18E004AE12D /* WeatherCell.swift in Sources */,
@@ -565,6 +578,7 @@
 				4FAC4D041D2D96990099511F /* ForecastService.swift in Sources */,
 				4F9B0FC41D32E59E004AE12D /* ConfigurationManager.swift in Sources */,
 				4FD74A881D2B3EBA007DEF38 /* Service.swift in Sources */,
+				4FC0BBC21D509F3C0091DFD9 /* City.swift in Sources */,
 				4FAC4CF71D2D800F0099511F /* Forecast.swift in Sources */,
 				4FD74A581D2B3DFA007DEF38 /* AppDelegate.swift in Sources */,
 				4FAC4CE71D2C0D310099511F /* ResultParsing.swift in Sources */,
@@ -585,7 +599,9 @@
 				4F9B0FBC1D31D681004AE12D /* WeatherRequestSpec.swift in Sources */,
 				4F2BE3761D33F88C001B1575 /* WeatherTableViewControllerSpec.swift in Sources */,
 				4FAC4D0F1D2DDB3F0099511F /* MockLocationService.swift in Sources */,
+				4FC0BBC61D50A2A60091DFD9 /* CitiesViewControllerSpec.swift in Sources */,
 				4FAC4CED1D2C69400099511F /* TemperatureTests.swift in Sources */,
+				4FC0BBC01D509EFE0091DFD9 /* CitySpec.swift in Sources */,
 				4FAC4CF51D2C7EDD0099511F /* WeatherData.swift in Sources */,
 				4FAC4D0D1D2DDAA70099511F /* MockRequestClient.swift in Sources */,
 				4FAC4CDB1D2BF5C00099511F /* WeatherViewControllerTests.swift in Sources */,
