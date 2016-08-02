@@ -58,6 +58,10 @@ class CitiesViewControllerSpec: QuickSpec {
                 UIApplication.sharedApplication().keyWindow!.rootViewController = controller
             }
             
+            it("should have the correct title") {
+                expect(controller.title) == "Select City"
+            }
+            
             describe("the close button") {
                 
                 var button: UIBarButtonItem!

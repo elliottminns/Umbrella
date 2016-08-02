@@ -215,7 +215,7 @@
             </objects>
             <point key="canvasLocation" x="1679" y="-381"/>
         </scene>
-        <!--Cities View Controller-->
+        <!--Select City-->
         <scene sceneID="Hry-Wq-az9">
             <objects>
                 <tableViewController storyboardIdentifier="CitiesViewController" id="p3M-ri-Gp7" customClass="CitiesViewController" customModule="Umbrella" customModuleProvider="target" sceneMemberID="viewController">
@@ -238,7 +238,7 @@
                             <outlet property="delegate" destination="p3M-ri-Gp7" id="iDJ-ol-PgK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2c7-Tn-u6R">
+                    <navigationItem key="navigationItem" title="Select City" id="2c7-Tn-u6R">
                         <barButtonItem key="leftBarButtonItem" title="Done" id="zZy-Ib-EJY">
                             <connections>
                                 <action selector="close" destination="p3M-ri-Gp7" id="jfX-9z-8hX"/>
