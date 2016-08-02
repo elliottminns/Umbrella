@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-protocol Service {
+protocol Service: class {
     
     associatedtype Data
     

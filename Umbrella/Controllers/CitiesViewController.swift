@@ -17,11 +17,11 @@ class CitiesViewController: UITableViewController {
     
     @IBOutlet var closeButton: UIBarButtonItem!
     
-    let cities: [City] = [City(name: "Berlin", latitude: 0, longitude: 0),
-                          City(name: "Dublin", latitude: 0, longitude: 0),
-                          City(name: "London", latitude: 0, longitude: 0),
-                          City(name: "Portland", latitude: 0, longitude: 0),
-                          City(name: "San Jose", latitude: 0, longitude: 0)]
+    let cities: [City] = [City(name: "Berlin", latitude: 52.518623, longitude: 13.376198),
+                          City(name: "Dublin", latitude: 53.350140, longitude: -6.266155),
+                          City(name: "London", latitude: 51.501476, longitude: -0.140634),
+                          City(name: "Portland", latitude: 45.523064, longitude: -122.676483),
+                          City(name: "San Jose", latitude: 37.396870, longitude: -121.802277)]
     
     weak var delegate: CitiesViewControllerDelegate?
     

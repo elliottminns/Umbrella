@@ -10,6 +10,10 @@ import UIKit
 
 class WeatherViewController: UIViewController {
     
+    enum Segues: String {
+        case CitySelect = "CitySelectSegue"
+    }
+    
     @IBOutlet weak var tableViewContainer: UIView?
     
     @IBOutlet weak var loadingLabel: UILabel?
@@ -18,7 +22,21 @@ class WeatherViewController: UIViewController {
     
     @IBOutlet weak var retryButton: UIButton?
     
+    @IBOutlet weak var citiesButton: UIButton?
+    
     let service: ForecastService = ForecastService()
+    
+    var cityService: CityForecastService?
+    
+    var currentCity: City? {
+        didSet {
+            guard let currentCity = currentCity else {
+                cityService = nil
+                return
+            }
+            cityService = CityForecastService(city: currentCity)
+        }
+    }
     
     var forecast: Forecast? {
         didSet {
@@ -50,12 +68,24 @@ class WeatherViewController: UIViewController {
                                    forState: [.Normal, .Highlighted])
         retryButton?.layer.cornerRadius = 5.0
         
+        citiesButton?.backgroundColor = Defaults.Color.Secondary.base
+        citiesButton?.setTitleColor(Defaults.Color.Primary.base,
+                                    forState: [.Normal, .Highlighted])
+        
         
         let addObs = NSNotificationCenter.defaultCenter().addObserverForName
         let queue = NSOperationQueue.mainQueue()
         addObs(UIApplicationDidBecomeActiveNotification, object: nil,
                queue: queue) { (notification) in
-                self.getForecast(fromService: self.service)
+                self.getForecast()
+        }
+    }
+    
+    func getForecast() {
+        if let cityService = self.cityService {
+            self.getForecast(fromService: cityService)
+        } else {
+            self.getForecast(fromService: self.service)
         }
     }
     
@@ -74,6 +104,11 @@ class WeatherViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        getForecast()
+    }
+    
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
@@ -83,6 +118,12 @@ class WeatherViewController: UIViewController {
         
         if let vc = segue.destinationViewController as? WeatherTableViewController {
             tableViewController = vc
+        } else if let identifier = segue.identifier where
+            Segues(rawValue: identifier) == Segues.CitySelect {
+            if let nvc = segue.destinationViewController as? UINavigationController,
+                vc = nvc.viewControllers.first as? CitiesViewController {
+                vc.delegate = self
+            }
         }
     }
     
@@ -224,6 +265,13 @@ extension WeatherViewController {
 
 extension WeatherViewController: WeatherTableViewControllerDelegate {
     func controllerWantsToRefresh(controller: WeatherTableViewController) {
-        getForecast(fromService: service)
+        getForecast()
+    }
+}
+
+extension WeatherViewController: CitiesViewControllerDelegate {
+    
+    func viewController(controller: CitiesViewController, didSelectCity city: City) {
+        self.currentCity = city
     }
 }

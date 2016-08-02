@@ -216,6 +216,23 @@ class WeatherViewControllerSpec: QuickSpec {
                     expect(controller.loadingIndicator).toNot(beNil())
                 }
                 
+                describe("The cities button") {
+                    var button: UIButton?
+                    
+                    beforeEach {
+                        button = controller.citiesButton
+                    }
+                    
+                    it("should not be nil") {
+                        expect(button).toNot(beNil())
+                    }
+                    
+                    it("should have the correct title") {
+                        let title = button?.titleForState(.Normal)
+                        expect(title) == "Cities"
+                    }
+                }
+                
                 describe("the retry button") {
                     it("should have the correct target") {
                         let targets = controller.retryButton?.allTargets()

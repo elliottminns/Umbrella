@@ -64,6 +64,8 @@
 		4FEF9B071D34769300081166 /* ConfigurationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9B061D34769300081166 /* ConfigurationManagerTests.swift */; };
 		4FEF9B0E1D34886D00081166 /* WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9B0D1D34886D00081166 /* WeatherUITests.swift */; };
 		4FEF9B101D34929B00081166 /* NoLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEF9B0F1D34929B00081166 /* NoLocationUITests.swift */; };
+		4FFD922F1D50C6660054519E /* CityForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD922E1D50C6660054519E /* CityForecastService.swift */; };
+		4FFD92311D50C6E10054519E /* CityForecastServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFD92301D50C6E10054519E /* CityForecastServiceSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +149,8 @@
 		4FEF9B061D34769300081166 /* ConfigurationManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigurationManagerTests.swift; path = Configurations/ConfigurationManagerTests.swift; sourceTree = "<group>"; };
 		4FEF9B0D1D34886D00081166 /* WeatherUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeatherUITests.swift; path = Weather/WeatherUITests.swift; sourceTree = "<group>"; };
 		4FEF9B0F1D34929B00081166 /* NoLocationUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoLocationUITests.swift; path = Weather/NoLocationUITests.swift; sourceTree = "<group>"; };
+		4FFD922E1D50C6660054519E /* CityForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityForecastService.swift; path = Providers/CityForecastService.swift; sourceTree = "<group>"; };
+		4FFD92301D50C6E10054519E /* CityForecastServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityForecastServiceSpec.swift; path = Services/CityForecastServiceSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +404,7 @@
 				4FAC4CD01D2BF1030099511F /* Result.swift */,
 				4FAC4D031D2D96990099511F /* ForecastService.swift */,
 				4FAC4D051D2D97820099511F /* LocationService.swift */,
+				4FFD922E1D50C6660054519E /* CityForecastService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 			children = (
 				4FAC4D071D2DD7E60099511F /* ForecastServiceSpec.swift */,
 				4F62FD5E1D2F150200C06A4C /* LocationServiceSpec.swift */,
+				4FFD92301D50C6E10054519E /* CityForecastServiceSpec.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -570,6 +576,7 @@
 				4F9B0FAC1D31A18E004AE12D /* WeatherCell.swift in Sources */,
 				4FAC4CD11D2BF1030099511F /* Result.swift in Sources */,
 				4F9B0FB01D31B181004AE12D /* WeatherCondition.swift in Sources */,
+				4FFD922F1D50C6660054519E /* CityForecastService.swift in Sources */,
 				4FAC4D001D2D8FA70099511F /* Colors.swift in Sources */,
 				4F9B0FBA1D31D3BE004AE12D /* OpenWeatherRequest.swift in Sources */,
 				4FAC4CE21D2BFFF20099511F /* Request.swift in Sources */,
@@ -600,6 +607,7 @@
 				4F2BE3761D33F88C001B1575 /* WeatherTableViewControllerSpec.swift in Sources */,
 				4FAC4D0F1D2DDB3F0099511F /* MockLocationService.swift in Sources */,
 				4FC0BBC61D50A2A60091DFD9 /* CitiesViewControllerSpec.swift in Sources */,
+				4FFD92311D50C6E10054519E /* CityForecastServiceSpec.swift in Sources */,
 				4FAC4CED1D2C69400099511F /* TemperatureTests.swift in Sources */,
 				4FC0BBC01D509EFE0091DFD9 /* CitySpec.swift in Sources */,
 				4FAC4CF51D2C7EDD0099511F /* WeatherData.swift in Sources */,
